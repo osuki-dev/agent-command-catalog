@@ -1,0 +1,291 @@
+{
+  "schemaVersion": 1,
+  "agent": "opencode",
+  "version": "2.0.15",
+  "source": {
+    "kind": "tagged-source",
+    "url": "https://github.com/anomalyco/opencode/tree/v2.0.15/packages/tui/src",
+    "revision": "v2.0.15",
+    "sha256": "b6140f72544e2f9b8252e1bb0b029d17edfa0ec9e1e3c1c3c7639c316bc33dfa"
+  },
+  "commands": [
+    {
+      "name": "/agents",
+      "description": "Switch agent",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Agent",
+      "availability": "default"
+    },
+    {
+      "name": "/cd",
+      "description": "Change working directory",
+      "aliases": [],
+      "argsHint": "[arguments]",
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/clear",
+      "description": "Clear session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/compact",
+      "description": "Compact session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/connect",
+      "description": "Connect an integration",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy session transcript",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/debug",
+      "description": "View debug info",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/editor",
+      "description": "Open editor",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/exit",
+      "description": "Exit the app",
+      "aliases": [
+        "/q",
+        "/quit"
+      ],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/export",
+      "description": "Export session transcript",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/fork",
+      "description": "Fork session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/help",
+      "description": "Help",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/mcps",
+      "description": "MCP servers",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Agent",
+      "availability": "default"
+    },
+    {
+      "name": "/models",
+      "description": "Switch model",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Agent",
+      "availability": "default"
+    },
+    {
+      "name": "/new",
+      "description": "New session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/open",
+      "description": "Open session or project",
+      "aliases": [
+        "/project",
+        "/projects"
+      ],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/pair",
+      "description": "Pair device",
+      "aliases": [
+        "/web"
+      ],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/redo",
+      "description": "Redo",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/reload",
+      "description": "Reload configuration",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename session",
+      "aliases": [],
+      "argsHint": "[arguments]",
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/restart",
+      "description": "Restart service",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/sessions",
+      "description": "Switch session",
+      "aliases": [
+        "/continue",
+        "/resume"
+      ],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/settings",
+      "description": "Open settings",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/share",
+      "description": "Share session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/skills",
+      "description": "Skills",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Prompt",
+      "availability": "default"
+    },
+    {
+      "name": "/status",
+      "description": "View status",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/themes",
+      "description": "Switch theme",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/timeline",
+      "description": "Jump to message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/undo",
+      "description": "Undo previous message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    },
+    {
+      "name": "/unshare",
+      "description": "Unshare session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "conditional"
+    },
+    {
+      "name": "/update",
+      "description": "Update OpenCode",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/variants",
+      "description": "Switch model variant",
+      "aliases": [
+        "/effort",
+        "/thinking"
+      ],
+      "argsHint": null,
+      "category": "Agent",
+      "availability": "default"
+    },
+    {
+      "name": "/worktrees",
+      "description": "Manage workspaces",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session",
+      "availability": "default"
+    }
+  ]
+}

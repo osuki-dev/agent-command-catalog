@@ -1,0 +1,620 @@
+{
+  "schemaVersion": 1,
+  "agent": "qoder-cli",
+  "version": "1.1.62",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://docs.qoder.com/cli/slash-reference.md",
+    "revision": null,
+    "sha256": "b0463094d9d0a256fa28374b5a3ca295558f8453e9f14fc4f4db7804249704a9"
+  },
+  "commands": [
+    {
+      "name": "/about",
+      "description": "Display about information.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/add-dir",
+      "description": "Add trusted directories.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/agents",
+      "description": "Manage Agents.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "conditional"
+    },
+    {
+      "name": "/batch",
+      "description": "Spawn parallel working agents in an isolated git worktree to apply batch changes across multiple files (requires the current directory to be a Git repository).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "conditional"
+    },
+    {
+      "name": "/branch",
+      "description": "Branch a new session from the current one.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/btw",
+      "description": "Ask a side question without interrupting the main conversation.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clear",
+      "description": "Clear the current session content.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/commands",
+      "description": "Reload and list all available commands.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compact",
+      "description": "Compress context to free up space.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/context",
+      "description": "Manage context.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/context-window",
+      "description": "Set the context window.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and Reasoning",
+      "availability": "unknown"
+    },
+    {
+      "name": "/continue",
+      "description": "Resume the most recent session for the current project.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy the last response.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/crontab",
+      "description": "Open the scheduled and recurring task management panel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "unknown"
+    },
+    {
+      "name": "/debug",
+      "description": "Debug assistant to help locate and fix issues.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/diff",
+      "description": "View the code diff.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Code and Review",
+      "availability": "unknown"
+    },
+    {
+      "name": "/docs",
+      "description": "Open documentation.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/editor",
+      "description": "Configure editor integration.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/effort",
+      "description": "Set the reasoning effort level.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and Reasoning",
+      "availability": "unknown"
+    },
+    {
+      "name": "/export",
+      "description": "Export the current session content.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fast",
+      "description": "Switch to Fast Mode.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and Reasoning",
+      "availability": "unknown"
+    },
+    {
+      "name": "/feedback",
+      "description": "Submit feedback.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/goal",
+      "description": "Manage session goals (see Goal Command Reference).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "unknown"
+    },
+    {
+      "name": "/help",
+      "description": "Display help information.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/hooks",
+      "description": "Manage Hooks.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "unknown"
+    },
+    {
+      "name": "/init",
+      "description": "Initialize the project (generate the project instructions file).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Code and Review",
+      "availability": "unknown"
+    },
+    {
+      "name": "/insights",
+      "description": "View insight analysis.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/kanban",
+      "description": "Open the Kanban panel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "unknown"
+    },
+    {
+      "name": "/login",
+      "description": "Sign in or switch authentication methods (alias /signin).",
+      "aliases": [
+        "/signin"
+      ],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/logout",
+      "description": "Sign out and clear locally cached credentials (alias /signout).",
+      "aliases": [
+        "/signout"
+      ],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/loop",
+      "description": "Execute prompts or commands in a recurring loop (see Loop Command Reference).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "unknown"
+    },
+    {
+      "name": "/marketplace",
+      "description": "Browse the Plugin Marketplace (alias /market).",
+      "aliases": [
+        "/market"
+      ],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "conditional"
+    },
+    {
+      "name": "/mcp",
+      "description": "Manage MCP servers.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "conditional"
+    },
+    {
+      "name": "/mcp-config",
+      "description": "Manage MCP server configurations.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "conditional"
+    },
+    {
+      "name": "/memory",
+      "description": "Manage long-term memory.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "unknown"
+    },
+    {
+      "name": "/model",
+      "description": "Select the conversational model.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and Reasoning",
+      "availability": "unknown"
+    },
+    {
+      "name": "/new",
+      "description": "Create a new empty session.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/output-style",
+      "description": "Choose this project's output style for the next conversation. Run /clear or /new to apply it.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/permissions",
+      "description": "Manage permissions (view and adjust permission rules).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/plan",
+      "description": "Enter Plan mode.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "conditional"
+    },
+    {
+      "name": "/plugins",
+      "description": "Manage plugins (alias /plugin).",
+      "aliases": [
+        "/plugin"
+      ],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "unknown"
+    },
+    {
+      "name": "/privacy",
+      "description": "Manage privacy settings.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/profile",
+      "description": "View and control performance profiling.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/quest",
+      "description": "Intelligent Workflow Orchestrator that guides you through feature development step-by-step using dedicated subagents.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "unknown"
+    },
+    {
+      "name": "/quit",
+      "description": "Exit the CLI.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/release-notes",
+      "description": "View the changelog.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/remember",
+      "description": "Review automatically accumulated memory entries and propose promotion suggestions (requires auto-memory to be enabled).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "conditional"
+    },
+    {
+      "name": "/remote-control",
+      "description": "Remotely control the session.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/remote-env",
+      "description": "Manage remote environments.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Remote and Other",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename the current session.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume",
+      "description": "Restore a historical session.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/review",
+      "description": "Review code changes.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Code and Review",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rewind",
+      "description": "Roll back to a specific checkpoint.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/run",
+      "description": "Launch and drive the project's actual application to observe the effects of changes at runtime.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/run-skill-generator",
+      "description": "Create or improve project-specific run skills.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/security-scan",
+      "description": "Qoder cloud security scan (supports L2 lightweight and L3 deep review).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/security-settings",
+      "description": "Configure security scan settings (provided by the built-in Security plugin).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/settings",
+      "description": "Open the Settings Panel (alias /config).",
+      "aliases": [
+        "/config"
+      ],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/setup-github",
+      "description": "Configure GitHub Actions integration (not available in the CN edition).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Code and Review",
+      "availability": "conditional"
+    },
+    {
+      "name": "/shortcuts",
+      "description": "View the keyboard shortcut list.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/simplify",
+      "description": "Simplify code or workflows.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/skills",
+      "description": "Manage Agent Skills.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "conditional"
+    },
+    {
+      "name": "/status",
+      "description": "View account and session status.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/statusline",
+      "description": "Configure the status bar.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/subtask",
+      "description": "Dispatch a background subagent with the current context; results return here (requires Agent sessions).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and Conversations",
+      "availability": "conditional"
+    },
+    {
+      "name": "/tasks",
+      "description": "Open the background task panel (aliases /bg, /background).",
+      "aliases": [
+        "/background",
+        "/bg"
+      ],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "unknown"
+    },
+    {
+      "name": "/theme",
+      "description": "Switch the color theme.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/tools",
+      "description": "View the list of available tools.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Extensions and Tools",
+      "availability": "unknown"
+    },
+    {
+      "name": "/upgrade",
+      "description": "Upgrade the account subscription plan.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/usage",
+      "description": "View usage statistics.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account and Status",
+      "availability": "unknown"
+    },
+    {
+      "name": "/verify",
+      "description": "Verify if results meet expectations.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/vim",
+      "description": "Toggle Vim mode.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/voice",
+      "description": "Toggle voice input.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configuration and UI",
+      "availability": "unknown"
+    },
+    {
+      "name": "/workflows",
+      "description": "Open the workflow panel (alias /workflow-tasks).",
+      "aliases": [
+        "/workflow-tasks"
+      ],
+      "argsHint": null,
+      "category": "Work Modes",
+      "availability": "conditional"
+    }
+  ]
+}

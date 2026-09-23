@@ -1,0 +1,6 @@
+{
+  "claude-code": "catalog/claude-code.json",
+  "codex-cli": "catalog/codex-cli.json",
+  "opencode": "catalog/opencode.json",
+  "qoder-cli": "catalog/qoder-cli.json"
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Agent Command Catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "agent", "version", "source", "commands"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "agent": { "enum": ["claude-code", "codex-cli", "opencode", "qoder-cli"] },
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "url", "revision", "sha256"],
+      "properties": {
+        "kind": { "enum": ["tagged-source", "current-official-docs"] },
+        "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+        "revision": { "type": ["string", "null"] },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "commands": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 500,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "description", "aliases", "argsHint", "category", "availability"],
+        "properties": {
+          "name": { "type": "string", "pattern": "^/[a-z][a-z0-9-]{0,79}$" },
+          "description": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "aliases": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^/[a-z][a-z0-9-]{0,79}$" } },
+          "argsHint": { "type": ["string", "null"], "maxLength": 120 },
+          "category": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "availability": { "enum": ["default", "conditional", "unknown"] }
+        }
+      }
+    }
+  }
+}

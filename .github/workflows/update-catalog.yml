@@ -1,0 +1,35 @@
+name: Update command catalog
+
+on:
+  schedule:
+    - cron: "17 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: bun test
+      - run: bun run typecheck
+      - run: bun run catalog:update
+      - run: bun run catalog:validate
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          add-paths: catalog
+          branch: automation/update-catalog
+          delete-branch: true
+          commit-message: "chore: update agent command catalog"
+          title: "chore: update agent command catalog"
+          body: |
+            Automated update from official tagged source or current official documentation.
+
+            Review the JSON diff, especially removed commands and conditional availability, before merging.

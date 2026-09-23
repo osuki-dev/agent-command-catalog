@@ -1,0 +1,483 @@
+{
+  "schemaVersion": 1,
+  "agent": "codex-cli",
+  "version": "0.156.1",
+  "source": {
+    "kind": "tagged-source",
+    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.156.1/codex-rs/tui/src/slash_command.rs",
+    "revision": "rust-v0.156.1",
+    "sha256": "577d0b5e6cf931434919537db9d24eed8dfe9874bc61c940b00b4a84492cac2b"
+  },
+  "commands": [
+    {
+      "name": "/agents",
+      "description": "open the agent command center",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/app",
+      "description": "continue this session in the Desktop app",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/approve",
+      "description": "approve one retry of a recent auto-review denial",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/apps",
+      "description": "manage apps",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/archive",
+      "description": "archive this session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/btw",
+      "description": "start a side conversation in an ephemeral fork",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/cd",
+      "description": "change the current working directory",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/clear",
+      "description": "clear the terminal and start a new chat",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/compact",
+      "description": "summarize conversation to prevent hitting the context limit",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/copy",
+      "description": "copy the last response or part of it",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/daemon",
+      "description": "Manage the local background server.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/debug-config",
+      "description": "show config layers and requirement sources for debugging",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/delete",
+      "description": "permanently delete this session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/diff",
+      "description": "show git diff (including untracked files)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/exit",
+      "description": "exit Codex",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/experimental",
+      "description": "toggle experimental features",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/export",
+      "description": "export the conversation as markdown",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/feedback",
+      "description": "send logs to maintainers",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/fork",
+      "description": "fork the current chat",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/goal",
+      "description": "set or view the goal for a long-running task",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/hooks",
+      "description": "view and manage lifecycle hooks",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/ide",
+      "description": "include current selection, open files, and other context from your IDE",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/import",
+      "description": "import setup, this project, and recent chats from Claude Code",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/init",
+      "description": "create an AGENTS.md file with instructions for Codex",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/keymap",
+      "description": "remap TUI shortcuts",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/logout",
+      "description": "log out of Codex",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/mcp",
+      "description": "list configured MCP tools; use /mcp verbose for details",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/memories",
+      "description": "configure memory use and generation",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/mention",
+      "description": "mention a file",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/model",
+      "description": "choose what model and reasoning effort to use",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/new",
+      "description": "start a new chat during a conversation",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/permissions",
+      "description": "choose what Codex is allowed to do",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/pets",
+      "description": "choose or hide the terminal pet",
+      "aliases": [
+        "/pet"
+      ],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/plan",
+      "description": "switch to Plan mode",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/plugins",
+      "description": "browse plugins",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/ps",
+      "description": "list background terminals",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/pwd",
+      "description": "show the current working directory",
+      "aliases": [
+        "/cwd"
+      ],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/quit",
+      "description": "Quit",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/raw",
+      "description": "toggle raw scrollback mode for copy-friendly terminal selection",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/recap",
+      "description": "summarize the current conversation now",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/rename",
+      "description": "rename the current thread",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/resume",
+      "description": "resume a saved chat",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/review",
+      "description": "review my current changes and find issues",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/setup-default-sandbox",
+      "description": "set up elevated agent sandbox",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/side",
+      "description": "start a side conversation in an ephemeral fork",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/skills",
+      "description": "use skills to improve how Codex performs specific tasks",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/status",
+      "description": "show current session configuration and token usage",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/statusline",
+      "description": "configure which items appear in the status line",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/stop",
+      "description": "stop all background terminals",
+      "aliases": [
+        "/clean"
+      ],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/subagents",
+      "description": "switch between this session's subagents",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/theme",
+      "description": "choose a syntax highlighting theme",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/title",
+      "description": "configure which items appear in the terminal title",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/tui",
+      "description": "choose the TUI mode for the next launch",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/usage",
+      "description": "view account usage or use a usage limit reset",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/vim",
+      "description": "toggle Vim mode for the composer",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/voice",
+      "description": "start or stop voice; use /voice settings to choose a voice",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "conditional"
+    },
+    {
+      "name": "/warnings",
+      "description": "view retained warnings and diagnostic details",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/worktree",
+      "description": "start or continue a conversation in a new worktree",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    }
+  ]
+}
