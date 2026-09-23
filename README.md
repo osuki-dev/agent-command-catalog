@@ -43,10 +43,6 @@ This repository catalogs built-in TUI commands only. It does not collect a user'
 4. Add a focused parser test, run `bun run catalog:update`, inspect the generated names and aliases against the official source, then run `bun run catalog:validate`, `bun test`, `bun run typecheck`, and `bun run build`.
 5. Update the source table above. Submit the parser, test, and generated `catalog/<agent>.json` together for review. The weekly updater will refresh it after merge.
 
-## Cloudflare deployment
+## License
 
-This follows the `muqun-website` deployment pattern: Bun builds static files into `dist/`, and Cloudflare Workers Static Assets serves them. No Worker script, database, R2 bucket, or GitHub deployment secret is needed. [`wrangler.jsonc`](wrangler.jsonc) names the Worker `agent-command-catalog`; [`static/_headers`](static/_headers) provides the static security headers and public CORS for the JSON catalog.
-
-For a local Cloudflare preview, run `bun run preview`. To deploy manually after Cloudflare authentication, run `bun run deploy`.
-
-For automatic deployment, connect this repository to a Cloudflare Workers Builds project with the same Worker name. Set `main` as the production branch, `BUN_VERSION=1.4.2` as a build variable, `bun run build` as the build command, and `bunx wrangler deploy` as the deploy command. Cloudflare supplies the build token for a connected repository. The configured custom domain is `agent-commands.muqun.dev`; Cloudflare creates its DNS record and certificate when the Worker is deployed. Do not connect or deploy the project until the reviewed repository is pushed.
+Project code and documentation are licensed under [MIT](LICENSE). Command names and descriptions are drawn from the linked vendors' official sources and remain subject to their respective terms.
