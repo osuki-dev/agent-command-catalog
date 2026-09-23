@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { parseClaude, parseCodex, parseOpenCode, parseQoder, validateCatalog } from "./catalog";
+import { parseClaude, parseCodex, parseCommandTable, parseOpenCode, parseQoder, validateCatalog } from "./catalog";
 
 describe("official source collectors", () => {
   test("Claude skips removed commands and keeps aliases", () => {
@@ -59,6 +59,27 @@ impl SlashCommand {
       { name: "/plan", description: "Enter Plan mode.", aliases: [], argsHint: null, category: "Work Modes", availability: "conditional" },
       { name: "/tasks", description: "Open tasks (aliases /bg, /background).", aliases: ["/background", "/bg"], argsHint: null, category: "Work Modes", availability: "unknown" },
     ]);
+  });
+
+  test("official command tables keep aliases and stop before unrelated sections", () => {
+    const markdown = `### Interactive Slash Commands
+#### Session Commands
+| Command | Aliases | Description |
+| --- | --- | --- |
+| \`/sessions\` | \`/resume\`, \`/continue\` | Switch session |
+| \`/goal [objective]\` | - | Set a goal when connected to Gateway |
+| \`/model\` | - | Switch model |
+| \`/new\` | - | Start session |
+| \`/help\` | - | Show help |
+### Other commands
+| Command | Description |
+| --- | --- |
+| \`/unrelated\` | Not a slash command for this surface |
+`;
+    const commands = parseCommandTable(markdown, "### Interactive Slash Commands", "### Other commands");
+    expect(commands.map((command) => command.name)).toEqual(["/goal", "/help", "/model", "/new", "/sessions"]);
+    expect(commands.find((command) => command.name === "/sessions")?.aliases).toEqual(["/continue", "/resume"]);
+    expect(commands.find((command) => command.name === "/goal")).toMatchObject({ argsHint: "[objective]", availability: "conditional" });
   });
 });
 

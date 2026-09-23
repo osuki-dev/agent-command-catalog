@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "agent": "pi",
+  "version": "0.87.1",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/slash-commands.md",
+    "revision": null,
+    "sha256": "d7e1db36e9186ff146a6c27de31fe169671f52cb6f7b93e1bf8d7fe76209a79c"
+  },
+  "commands": [
+    {
+      "name": "/bug",
+      "description": "Prepare a private bug report for the Pi developers",
+      "aliases": [],
+      "argsHint": "[description]",
+      "category": "Export and share",
+      "availability": "unknown"
+    },
+    {
+      "name": "/changelog",
+      "description": "Show changelog entries",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Runtime and project",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clone",
+      "description": "Duplicate the current session at its current position",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compact",
+      "description": "Compact the current context, optionally with custom instructions",
+      "aliases": [],
+      "argsHint": "[instructions]",
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy the last assistant message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Export and share",
+      "availability": "unknown"
+    },
+    {
+      "name": "/export",
+      "description": "Export the session as HTML or JSONL",
+      "aliases": [],
+      "argsHint": "[path]",
+      "category": "Export and share",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fork",
+      "description": "Create a new session from an earlier user message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/hotkeys",
+      "description": "Show active keyboard shortcuts",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Runtime and project",
+      "availability": "unknown"
+    },
+    {
+      "name": "/import",
+      "description": "Import and resume a JSONL session",
+      "aliases": [],
+      "argsHint": "<path>",
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/llama",
+      "description": "Manage models on the configured llama.cpp router",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/login",
+      "description": "Add provider authentication",
+      "aliases": [],
+      "argsHint": "[provider]",
+      "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/logout",
+      "description": "Remove provider authentication",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/model",
+      "description": "Select a model",
+      "aliases": [],
+      "argsHint": "[provider/model]",
+      "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/name",
+      "description": "Set the session display name, or show the current name when omitted",
+      "aliases": [],
+      "argsHint": "[name]",
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/new",
+      "description": "Start a new session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/quit",
+      "description": "Quit Pi",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Runtime and project",
+      "availability": "unknown"
+    },
+    {
+      "name": "/reload",
+      "description": "Reload keybindings, extensions, skills, templates, themes, and context files",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Runtime and project",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume",
+      "description": "Switch to another saved session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/scoped-models",
+      "description": "Configure the models used by interactive cycling",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/session",
+      "description": "Show current session information and statistics",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/settings",
+      "description": "Open settings",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/share",
+      "description": "Upload the session and return a viewer link",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Export and share",
+      "availability": "unknown"
+    },
+    {
+      "name": "/thinking",
+      "description": "Set the thinking level",
+      "aliases": [],
+      "argsHint": "[level]",
+      "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/tree",
+      "description": "Navigate the session tree",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and context",
+      "availability": "unknown"
+    },
+    {
+      "name": "/trust",
+      "description": "Save a project trust decision for future Pi processes",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Runtime and project",
+      "availability": "unknown"
+    }
+  ]
+}

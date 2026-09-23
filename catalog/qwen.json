@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "agent": "qwen",
+  "version": "0.24.4",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
+    "revision": null,
+    "sha256": "483da3ca2f29c11adabebafb6e2a1f4094b57823d57b9b22530cbde5637c8841"
+  },
+  "commands": [
+    {
+      "name": "/advisor",
+      "description": "Review the conversation above",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Second Opinion (`/advisor`)",
+      "availability": "unknown"
+    },
+    {
+      "name": "/agents",
+      "description": "Manage subagents",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/approval-mode",
+      "description": "Change the tool-approval mode (current session only)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/arena",
+      "description": "Manage Arena sessions",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/auth",
+      "description": "Change authentication method",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/branch",
+      "description": "Fork the current conversation into a new session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/btw",
+      "description": "Ask a quick side question",
+      "aliases": [],
+      "argsHint": "<your question>",
+      "category": "Side Question (`/btw`)",
+      "availability": "unknown"
+    },
+    {
+      "name": "/bug",
+      "description": "Submit issue about Qwen Code",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/cd",
+      "description": "Move this session to a new working directory",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clear",
+      "description": "Clear conversation history and free up context",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compress",
+      "description": "Replace chat history with summary to save Tokens",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compress-fast",
+      "description": "Fast compression without AI — strips old tool outputs and thinking parts",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/config",
+      "description": "Get or set any setting by dot-path key (writes to user settings)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/context",
+      "description": "Show context window usage breakdown",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/coordinate",
+      "description": "Coordinate read-only workers and one optional worktree writer",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy to clipboard: reply (Nth-last), code (by lang), LaTeX, or Mermaid",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/curator",
+      "description": "Inspect, pin, archive, or restore inactive project auto-skills",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/delete",
+      "description": "Delete a previous session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/diff",
+      "description": "Open an interactive diff viewer showing uncommitted changes and per-turn diffs. Use ←/→ to switch between current git diff and individual conversation turns, ↑/↓ to browse files",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/directory",
+      "description": "Manage multi-directory support workspace",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/docs",
+      "description": "Open full Qwen Code documentation in browser",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/doctor",
+      "description": "Run installation and environment diagnostics",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/dream",
+      "description": "Manually run auto-memory consolidation",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/editor",
+      "description": "Open dialog to select supported editor",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/effort",
+      "description": "Set reasoning effort for thinking-capable models",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/export",
+      "description": "Export session history to file",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/extensions",
+      "description": "Manage extensions",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/forget",
+      "description": "Remove matching entries from auto-memory",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fork",
+      "description": "Spawn a background agent that inherits the full conversation",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/goal",
+      "description": "Set a Goal — keep working until a verifier confirms it (see Goals)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/goal-draft",
+      "description": "Turn a fuzzy intention into a verifiable /goal objective",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/help",
+      "description": "Display help information for available commands",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/history",
+      "description": "Control history display preferences and visibility",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/hooks",
+      "description": "Manage Qwen Code hooks",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/ide",
+      "description": "Manage IDE integration",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/import-config",
+      "description": "Import MCP servers from Claude configs",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/init",
+      "description": "Analyze current directory and create initial context file",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/insight",
+      "description": "Generate programming insights from chat history",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/language",
+      "description": "View or change language settings",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Language Settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/learn",
+      "description": "Create a reusable project skill from a file, directory, URL, video, or text",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/log",
+      "description": "Open a commit history viewer for the workspace (Web Shell only)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/loop",
+      "description": "Run a prompt on a recurring schedule",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/lsp",
+      "description": "Show LSP server status",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/mcp",
+      "description": "List configured MCP servers and tools",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/memory",
+      "description": "Open the Memory Manager dialog",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/model",
+      "description": "Switch model used in current session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/output-style",
+      "description": "Choose the output style that shapes how responses are written",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/peers",
+      "description": "Review held peer messages; manage trusted controllers",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/permissions",
+      "description": "Manage permission rules",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/plan",
+      "description": "Switch to plan mode or exit plan mode",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/qc-helper",
+      "description": "Answer questions about Qwen Code usage and configuration",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/quit",
+      "description": "Exit Qwen Code immediately",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/recap",
+      "description": "Generate a one-line session recap now",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/reload-plugins",
+      "description": "Reload extension changes (commands, skills, agents, workflows, hooks, MCP/LSP servers) from disk",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/remember",
+      "description": "Save a durable memory",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename or tag the current session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/restore",
+      "description": "Revert project files to the checkpoint before a tool call ran",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume",
+      "description": "Resume a previous conversation session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/review",
+      "description": "Multi-agent code review (12 parallel agents at high effort)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rewind",
+      "description": "Rewind conversation to a previous turn",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/settings",
+      "description": "Open settings editor",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/setup-github",
+      "description": "Set up GitHub Actions",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/simplify",
+      "description": "Review recent changes and apply safe cleanup edits directly",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
+      "availability": "unknown"
+    },
+    {
+      "name": "/skills",
+      "description": "Open the Skills panel to browse, search, toggle, and launch skills",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/stats",
+      "description": "Open the interactive usage statistics dashboard (Session, Activity, and Efficiency tabs)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/status",
+      "description": "Display version information",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/statusline",
+      "description": "Open interactive status line preset dialog",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/summary",
+      "description": "Generate project summary based on conversation history",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/tasks",
+      "description": "List background tasks",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/terminal-setup",
+      "description": "Configure terminal keybindings for multiline input",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/theme",
+      "description": "Change Qwen Code visual theme",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/tools",
+      "description": "Display currently available tool list",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/trust",
+      "description": "Manage folder trust settings",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/vim",
+      "description": "Turn input area Vim editing mode on/off",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/voice",
+      "description": "Toggle voice dictation input",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/workflows",
+      "description": "Inspect workflow runs; cooperatively pause/resume a background run",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tool and Model Management",
+      "availability": "unknown"
+    }
+  ]
+}

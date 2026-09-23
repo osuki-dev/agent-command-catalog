@@ -10,6 +10,8 @@ a { color: inherit; text-decoration: none; }
 .brand-icon { display: grid; place-items: center; width: 31px; height: 31px; border: 1px solid #b7ec7d; color: #b7ec7d; border-radius: 7px; font-size: 24px; line-height: 1; font-weight: 400; }
 .brand-dot { color: #b7ec7d; }
 .topbar-right { display: flex; align-items: center; gap: 9px; color: #9aa59a; font-size: 12px; }
+.topbar-link { display: inline-flex; align-items: center; gap: 6px; margin-left: 12px; color: #d3dfd0; white-space: nowrap; }
+.topbar-link:hover { color: #b7ec7d; }
 .status-dot { width: 7px; height: 7px; border-radius: 100%; background: #b7ec7d; box-shadow: 0 0 13px #b7ec7d88; }
 .main-layout { max-width: 1260px; padding: 0 32px; margin: auto; }
 .hero { padding: 104px 0 102px; max-width: 760px; }
@@ -18,17 +20,18 @@ a { color: inherit; text-decoration: none; }
 .hero h1 { margin: 28px 0 24px; font-size: clamp(62px, 7.5vw, 112px); line-height: .99; letter-spacing: -.085em; font-weight: 650; }
 .hero h1 span { color: #b7ec7d; }
 .hero p { max-width: 555px; color: #9ca89c; font-size: 17px; line-height: 1.65; margin: 0; }
-.hero-meta { display: flex; gap: 13px; margin-top: 34px; color: #b2bcb0; font-size: 12px; }
-.meta-separator { color: #647063; }
 .directory { border-top: 1px solid #2c342d; padding: 37px 0 90px; }
 .section-heading { display: flex; align-items: end; justify-content: space-between; margin-bottom: 24px; }
 .eyebrow.small { font-size: 10px; letter-spacing: .15em; }
 .section-heading h2 { font-size: 32px; letter-spacing: -.055em; margin: 9px 0 0; font-weight: 580; }
 .section-count { color: #69776b; font-size: 12px; font-family: ui-monospace, monospace; }
 .agent-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.agent-card { text-align: left; min-height: 170px; border: 1px solid #303a30; border-radius: 10px; color: #dce4dc; background: #181e19; padding: 17px 18px 18px; display: flex; flex-direction: column; transition: background .16s, border-color .16s, transform .16s; }
+.agent-card { position: relative; min-height: 170px; border: 1px solid #303a30; border-radius: 10px; color: #dce4dc; background: #181e19; transition: background .16s, border-color .16s, transform .16s; }
 .agent-card:hover { background: #202a20; transform: translateY(-2px); }
 .agent-card.selected { background: #283725; border-color: #a9db74; }
+.agent-select { width: 100%; min-height: 170px; padding: 17px 18px 18px; display: flex; flex-direction: column; text-align: left; background: transparent; border: 0; color: inherit; }
+.agent-json { position: absolute; right: 18px; top: 23px; display: inline-flex; align-items: center; gap: 3px; color: #a9db74; font-size: 11px; font-family: ui-monospace, monospace; }
+.agent-json:hover { text-decoration: underline; }
 .agent-card-top, .agent-card-bottom { display: flex; align-items: center; justify-content: space-between; }
 .agent-card-top { color: #70816f; }
 .agent-card.selected .agent-card-top { color: #b7ec7d; }
@@ -48,6 +51,7 @@ a { color: inherit; text-decoration: none; }
 .search-box:focus-within { border-color: #a9db74; }
 .search-box input { width: 100%; outline: 0; border: 0; background: transparent; color: #e6e9e7; font-size: 13px; }
 .search-box input::placeholder { color: #758272; }
+.search-box kbd { border: 1px solid #465547; border-radius: 4px; padding: 2px 6px; color: #9fac9d; font: 11px ui-monospace, monospace; }
 .filter-bar select { height: 41px; max-width: 220px; border: 1px solid #39443a; border-radius: 7px; padding: 0 12px; background: #1e251f; color: #b9c5b8; font-size: 12px; }
 .result-count { min-width: 62px; text-align: right; color: #8b998a; font-size: 11px; font-family: ui-monospace, monospace; }
 .command-row { display: grid; grid-template-columns: 245px 1fr auto; align-items: center; gap: 21px; padding: 18px 24px; border-bottom: 1px solid #283128; min-height: 76px; }
@@ -69,4 +73,4 @@ a { color: inherit; text-decoration: none; }
 .footer a { display: flex; align-items: center; gap: 4px; color: #b7ec7d; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 @media (max-width: 850px) { .agent-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .command-row { grid-template-columns: 185px 1fr auto; gap: 12px; } .aliases { display: none; } }
-@media (max-width: 620px) { .topbar { height: 65px; padding: 0 18px; } .topbar-right { font-size: 0; } .main-layout { padding: 0 18px; } .hero { padding: 74px 0 78px; } .hero h1 { font-size: clamp(56px, 15vw, 80px); } .hero p { font-size: 15px; } .hero-meta { flex-wrap: wrap; } .directory { padding-bottom: 55px; } .agent-grid { gap: 8px; } .agent-card { min-height: 140px; padding: 13px; } .agent-card strong { font-size: 16px; } .agent-card-bottom { font-size: 10px; } .catalog-head { padding: 24px 18px; align-items: start; } .catalog-head h2 { font-size: 24px; } .source-link { font-size: 0; } .filter-bar { padding: 12px; flex-wrap: wrap; } .search-box { flex-basis: 100%; } .filter-bar select { flex: 1; max-width: none; } .command-row { display: block; padding: 16px; position: relative; } .command-row p { margin-top: 9px; padding-right: 23px; } .command-end { position: absolute; right: 13px; top: 16px; } .footer { padding: 22px 18px; flex-wrap: wrap; } .footer span:first-child { width: 100%; } }
+@media (max-width: 620px) { .topbar { height: 65px; padding: 0 18px; } .brand { font-size: 15px; gap: 7px; } .brand-icon { width: 27px; height: 27px; } .topbar-right { font-size: 0; gap: 5px; } .topbar-right .status-dot { display: none; } .topbar-link { margin-left: 0; gap: 0; } .topbar-link span { font-size: 11px; } .topbar-link svg { display: none; } .main-layout { padding: 0 18px; } .hero { padding: 74px 0 78px; } .hero h1 { font-size: clamp(56px, 15vw, 80px); } .hero p { font-size: 15px; } .directory { padding-bottom: 55px; } .agent-grid { gap: 8px; } .agent-card, .agent-select { min-height: 140px; } .agent-select { padding: 13px; } .agent-json { right: 13px; top: 18px; } .agent-card strong { font-size: 16px; } .agent-card-bottom { font-size: 10px; } .catalog-head { padding: 24px 18px; align-items: start; } .catalog-head h2 { font-size: 24px; } .source-link { font-size: 0; } .filter-bar { padding: 12px; flex-wrap: wrap; } .search-box { flex-basis: 100%; } .filter-bar select { flex: 1; max-width: none; } .command-row { display: block; padding: 16px; position: relative; } .command-row p { margin-top: 9px; padding-right: 23px; } .command-end { position: absolute; right: 13px; top: 16px; } .footer { padding: 22px 18px; flex-wrap: wrap; } .footer span:first-child { width: 100%; } }

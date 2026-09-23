@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 
-export const agents = ["claude-code", "codex-cli", "opencode", "qoder-cli"] as const;
+export const agents = ["claude-code", "codex-cli", "opencode", "qoder-cli", "pi", "copilot", "droid", "kilo", "qwen", "cursor"] as const;
 export type Agent = (typeof agents)[number];
 export type Availability = "default" | "conditional" | "unknown";
 export type Command = {
@@ -25,15 +25,20 @@ export type Catalog = {
   commands: Command[];
 };
 
-const packages: Record<Agent, string> = {
+const packages: Partial<Record<Agent, string>> = {
   "claude-code": "@anthropic-ai/claude-code",
   "codex-cli": "@openai/codex",
   opencode: "@opencode/cli",
   "qoder-cli": "@qoder-ai/qodercli",
+  pi: "@earendil-works/pi-coding-agent",
+  copilot: "@github/copilot",
+  droid: "droid",
+  kilo: "@kilocode/cli",
+  qwen: "@qwen-code/qwen-code",
 };
 const root = join(import.meta.dir, "..");
 const commandName = /^\/[a-z][a-z0-9-]{0,79}$/;
-const versionPattern = /^\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?$/;
+const versionPattern = /^(?:current|\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?)$/;
 
 function normalizeText(input: string): string {
   return input
@@ -168,6 +173,42 @@ export function parseCodex(rust: string): Command[] {
   return sorted(commands);
 }
 
+export function parseCommandTable(markdown: string, startHeading: string, endHeading?: string): Command[] {
+  const start = markdown.indexOf(startHeading);
+  if (start < 0) throw new Error(`Command section not found: ${startHeading}`);
+  const end = endHeading ? markdown.indexOf(endHeading, start + startHeading.length) : -1;
+  const section = markdown.slice(start, end < 0 ? undefined : end);
+  const commands = new Map<string, Command>();
+  let category = "Built-in";
+  let hasAliasColumn = false;
+  for (const line of section.split("\n")) {
+    const heading = line.match(/^#{2,4} (.+)$/)?.[1];
+    if (heading) category = heading.replace(/^\d+(?:\.\d+)*\s+/, "").trim();
+    if (!line.startsWith("|")) continue;
+    const cells = markdownCells(line);
+    if (/^Command\b/i.test(cells[0] ?? "")) {
+      hasAliasColumn = /^Aliases$/i.test(cells[1] ?? "");
+      continue;
+    }
+    const first = cells[0] ?? "";
+    const names = [...first.matchAll(/`(\/[a-z][a-z0-9-]*)([^`]*)`/g)];
+    if (!names.length) continue;
+    const description = cells[hasAliasColumn ? 2 : 1];
+    if (!description || /^[-: ]+$/.test(description)) continue;
+    const aliases = hasAliasColumn
+      ? [...(cells[1] ?? "").matchAll(/\/[a-z][a-z0-9-]*/g)].map((match) => match[0])
+      : aliasesFrom(normalizeText(description));
+    const conditional = /\b(?:requires?|only available|when connected|rolling out|experimental|feature flag)\b/i.test(description)
+      || /when connected|gateway/i.test(category);
+    for (const [index, name] of names.entries()) {
+      if (commands.has(name[1]!)) continue;
+      commands.set(name[1]!, makeCommand(name[1]!, description, category, index === 0 ? aliases : [], name[2]?.trim().replaceAll("\\|", "|") || null, conditional ? "conditional" : "unknown"));
+    }
+  }
+  if (commands.size < 5) throw new Error(`Too few commands in section: ${startHeading}`);
+  return sorted([...commands.values()]);
+}
+
 export function validateCatalog(input: unknown): asserts input is Catalog {
   if (!input || typeof input !== "object") throw new Error("Catalog must be an object");
   const value = input as Partial<Catalog>;
@@ -202,7 +243,9 @@ async function fetchText(url: string): Promise<string> {
 }
 
 async function latestVersion(agent: Agent): Promise<string> {
-  const name = encodeURIComponent(packages[agent]);
+  const packageName = packages[agent];
+  if (!packageName) return "current";
+  const name = encodeURIComponent(packageName);
   const response = await fetch(`https://registry.npmjs.org/${name}/latest`, { signal: AbortSignal.timeout(20_000) });
   if (!response.ok) throw new Error(`npm registry ${agent}: HTTP ${response.status}`);
   const metadata: unknown = await response.json();
@@ -215,13 +258,20 @@ export async function collect(agent: Agent, version: string): Promise<Catalog> {
   if (!versionPattern.test(version)) throw new Error(`Invalid requested version: ${version}`);
   const tagged = agent === "codex-cli" || agent === "opencode";
   const revision = agent === "codex-cli" ? `rust-v${version}` : agent === "opencode" ? `v${version}` : null;
-  const url = agent === "codex-cli"
-    ? `https://raw.githubusercontent.com/openai/codex/${revision}/codex-rs/tui/src/slash_command.rs`
-    : agent === "opencode"
-      ? `https://github.com/anomalyco/opencode/tree/${revision}/packages/tui/src`
-      : agent === "claude-code"
-        ? "https://code.claude.com/docs/en/commands.md"
-        : "https://docs.qoder.com/cli/slash-reference.md";
+  const documentUrls: Partial<Record<Agent, string>> = {
+    "claude-code": "https://code.claude.com/docs/en/commands.md",
+    "qoder-cli": "https://docs.qoder.com/cli/slash-reference.md",
+    pi: "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/slash-commands.md",
+    copilot: "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
+    droid: "https://docs.factory.ai/droid-cli/cli-reference.md",
+    kilo: "https://raw.githubusercontent.com/Kilo-Org/kilocode/main/packages/kilo-docs/pages/code-with-ai/platforms/cli.md",
+    qwen: "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
+    cursor: "https://cursor.com/docs/cli/reference/slash-commands.md",
+  };
+  const url = agent === "codex-cli" ? `https://raw.githubusercontent.com/openai/codex/${revision}/codex-rs/tui/src/slash_command.rs`
+    : agent === "opencode" ? `https://github.com/anomalyco/opencode/tree/${revision}/packages/tui/src`
+      : documentUrls[agent];
+  if (!url) throw new Error(`No source URL for ${agent}`);
   const source = agent === "opencode"
     ? (await Promise.all([
       "app.tsx",
@@ -231,7 +281,14 @@ export async function collect(agent: Agent, version: string): Promise<Catalog> {
     : await fetchText(url);
   const commands = agent === "codex-cli" ? parseCodex(source)
     : agent === "opencode" ? parseOpenCode(source)
-      : agent === "claude-code" ? parseClaude(source) : parseQoder(source);
+      : agent === "claude-code" ? parseClaude(source)
+        : agent === "qoder-cli" ? parseQoder(source)
+          : agent === "pi" ? parseCommandTable(source, "## Models and settings", "## Commands added by resources")
+            : agent === "copilot" ? parseCommandTable(source, "## Slash commands in the interactive interface", "## Command-line options")
+              : agent === "droid" ? parseCommandTable(source, "### Slash commands", "### Git worktrees")
+                : agent === "kilo" ? parseCommandTable(source, "### Interactive Slash Commands", "### Importing Claude Code")
+                  : agent === "qwen" ? parseCommandTable(source, "## 1. Slash Commands", "## 2. @ Commands")
+                    : parseCommandTable(source, "# Slash commands");
   const catalog: Catalog = {
     schemaVersion: 1,
     agent,

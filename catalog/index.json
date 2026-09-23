@@ -2,5 +2,11 @@
   "claude-code": "catalog/claude-code.json",
   "codex-cli": "catalog/codex-cli.json",
   "opencode": "catalog/opencode.json",
-  "qoder-cli": "catalog/qoder-cli.json"
+  "qoder-cli": "catalog/qoder-cli.json",
+  "pi": "catalog/pi.json",
+  "copilot": "catalog/copilot.json",
+  "droid": "catalog/droid.json",
+  "kilo": "catalog/kilo.json",
+  "qwen": "catalog/qwen.json",
+  "cursor": "catalog/cursor.json"
 }

@@ -1,0 +1,415 @@
+{
+  "schemaVersion": 1,
+  "agent": "droid",
+  "version": "0.225.2",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://docs.factory.ai/droid-cli/cli-reference.md",
+    "revision": null,
+    "sha256": "6dcce5654e16c145313fe369be09079ff88defba15b98823df2ee42a0e49719c"
+  },
+  "commands": [
+    {
+      "name": "/account",
+      "description": "Open Factory account settings in browser",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/archive",
+      "description": "Archive the current session (restore it from the /sessions Archived tab)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/billing",
+      "description": "View and manage billing settings",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/btw",
+      "description": "Ask a side question without polluting the main transcript",
+      "aliases": [],
+      "argsHint": "<question>",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/bug",
+      "description": "Create a bug report with session data and logs",
+      "aliases": [],
+      "argsHint": "[title]",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/cd",
+      "description": "Change session working directory (alias for /cwd)",
+      "aliases": [
+        "/cwd"
+      ],
+      "argsHint": "<path>",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clear",
+      "description": "Clear conversation context, keep current model & autonomy",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/commands",
+      "description": "Manage custom slash commands",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compress",
+      "description": "Compress session and move to new one with summary",
+      "aliases": [],
+      "argsHint": "[prompt]",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/context",
+      "description": "Show context window usage breakdown with progress bar",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy prompts, responses, turn ranges, or session ID",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/cost",
+      "description": "Show usage statistics",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/create-skill",
+      "description": "Create a reusable skill from current session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/cwd",
+      "description": "Change session working directory",
+      "aliases": [],
+      "argsHint": "<path>",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/diagnostics",
+      "description": "Show settings configuration errors",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/droids",
+      "description": "Manage custom droids",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fast",
+      "description": "Enable fast mode for current model (/fast off to disable)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/favorite",
+      "description": "Mark current session as a favorite",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fork",
+      "description": "Copy current session into a new session; you stay in the original and get a droid --resume command for the fork",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/help",
+      "description": "Show available slash commands",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/hooks",
+      "description": "Manage lifecycle hooks",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/ide",
+      "description": "Configure IDE integrations",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/install-code-review",
+      "description": "Set up automated code review",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/install-slack-app",
+      "description": "Install/connect Slack integration",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/language",
+      "description": "Switch TUI display language",
+      "aliases": [],
+      "argsHint": "<locale>",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/limits",
+      "description": "Manage token usage limits and overage preferences",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/login",
+      "description": "Sign in to Factory",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/logout",
+      "description": "Sign out of Factory",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/mcp",
+      "description": "Manage Model Context Protocol servers",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/missions",
+      "description": "Enter Mission Mode",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/model",
+      "description": "Switch AI model mid-session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/new",
+      "description": "Start a fresh session, reset model & autonomy to defaults",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/plugins",
+      "description": "Manage plugins and marketplaces",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/quit",
+      "description": "Exit droid (alias: exit, or press )",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/readiness-fix",
+      "description": "Fix failing agent readiness signals from latest report",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/readiness-report",
+      "description": "Generate readiness report",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename current session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/review",
+      "description": "Start AI-powered code review workflow",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rewind-conversation",
+      "description": "Undo recent changes in the session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/sessions",
+      "description": "List and select previous sessions",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/settings",
+      "description": "Configure application settings",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/setup-incident-response",
+      "description": "Set up Slack auto-run for incident-response channel",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/share",
+      "description": "Share session with organization",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/skills",
+      "description": "Manage and invoke skills",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/stats",
+      "description": "Show usage statistics (supports relative periods, date ranges)",
+      "aliases": [],
+      "argsHint": "[period]",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/status",
+      "description": "Show current droid status and configuration",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/statusline",
+      "description": "Configure custom status line",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/terminal-setup",
+      "description": "Configure terminal keybindings for",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/themes",
+      "description": "Choose a color theme",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/tree",
+      "description": "Browse and resume branches in the current session's fork tree",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    }
+  ]
+}

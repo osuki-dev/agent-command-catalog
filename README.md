@@ -1,6 +1,6 @@
 # Agent Command Catalog
 
-A small, version-labeled catalog of built-in slash commands for Claude Code, Codex CLI, OpenCode, and Qoder CLI. Each agent has **one latest JSON file** in [`catalog/`](catalog/). The files can be consumed directly by a gateway or a future static website; no runtime dependency on this repository is required.
+A small catalog of built-in slash commands for coding agents. Each agent has **one latest JSON file** in [`catalog/`](catalog/). The files can be consumed directly by a gateway or the static website; no runtime dependency on this repository is required.
 
 | Agent | Catalog | Official source |
 | --- | --- | --- |
@@ -8,12 +8,18 @@ A small, version-labeled catalog of built-in slash commands for Claude Code, Cod
 | Codex CLI | [`codex-cli.json`](catalog/codex-cli.json) | [Tagged TUI source](https://github.com/openai/codex/blob/main/codex-rs/tui/src/slash_command.rs) |
 | OpenCode v2 | [`opencode.json`](catalog/opencode.json) | [Tagged v2 TUI source](https://github.com/anomalyco/opencode/tree/dev/packages/tui/src) |
 | Qoder CLI | [`qoder-cli.json`](catalog/qoder-cli.json) | [Slash-command reference](https://docs.qoder.com/cli/slash-reference) |
+| Pi | [`pi.json`](catalog/pi.json) | [Slash-command reference](https://github.com/earendil-works/pi/blob/main/packages/coding-agent/docs/slash-commands.md) |
+| GitHub Copilot CLI | [`copilot.json`](catalog/copilot.json) | [CLI command reference](https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference) |
+| Factory Droid | [`droid.json`](catalog/droid.json) | [CLI reference](https://docs.factory.ai/droid-cli/cli-reference) |
+| Kilo CLI | [`kilo.json`](catalog/kilo.json) | [CLI reference](https://github.com/Kilo-Org/kilocode/blob/main/packages/kilo-docs/pages/code-with-ai/platforms/cli.md) |
+| Qwen Code | [`qwen.json`](catalog/qwen.json) | [Commands reference](https://github.com/QwenLM/qwen-code/blob/main/docs/users/features/commands.md) |
+| Cursor CLI | [`cursor.json`](catalog/cursor.json) | [Slash-command reference](https://cursor.com/docs/cli/reference/slash-commands) |
 
-The `version` field is the latest npm release observed when a catalog file was updated. Codex and OpenCode v2 sources are pinned to that release's Git tag; OpenCode v1 is intentionally excluded. Claude Code and Qoder publish current documentation, not versioned command definitions, so their `source.kind` is `current-official-docs`: the JSON must not be interpreted as a guarantee that every command exists in a specific installed version. Platform, account, feature flags, and local configuration can also affect availability.
+The `version` field is the latest npm release observed when available; `current` means the source does not expose a suitable release channel. Codex and OpenCode v2 sources are pinned to that release's Git tag; OpenCode v1 is intentionally excluded. Other sources use current official documentation, not versioned command definitions, so their `source.kind` is `current-official-docs`: the JSON must not be interpreted as a guarantee that every command exists in a specific installed version. Platform, account, feature flags, and local configuration can also affect availability.
 
 ## Use the data
 
-[`catalog/index.json`](catalog/index.json) maps agent IDs to the four JSON files. Each file contains `schemaVersion`, `agent`, `version`, official `source` provenance, and a sorted `commands` array. A command contains its literal `name`, `description`, `aliases`, optional `argsHint`, `category`, and `availability`. The format is described by [`schema/catalog.schema.json`](schema/catalog.schema.json).
+[`catalog/index.json`](catalog/index.json) maps agent IDs to the JSON files. Each file contains `schemaVersion`, `agent`, `version`, official `source` provenance, and a sorted `commands` array. A command contains its literal `name`, `description`, `aliases`, optional `argsHint`, `category`, and `availability`. The format is described by [`schema/catalog.schema.json`](schema/catalog.schema.json).
 
 For an interactive client, treat this as a suggestion catalog. Prefer live agent-provided commands when an API exists, then add local project/user commands separately. Sending an unavailable slash command is handled by the agent itself.
 

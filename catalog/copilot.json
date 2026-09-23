@@ -1,0 +1,785 @@
+{
+  "schemaVersion": 1,
+  "agent": "copilot",
+  "version": "1.0.88",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
+    "revision": null,
+    "sha256": "5fef1f2feb25b06ab9fc79e1cfa8e0900b49827d76fa9c8e356d32f4d4fd3790"
+  },
+  "commands": [
+    {
+      "name": "/add-dir",
+      "description": "Allow file access to a directory and load its .github/skills and .github/agents as trusted configurations.",
+      "aliases": [],
+      "argsHint": "PATH",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/after",
+      "description": "Schedule a non-recurring prompt, skill, or schedulable slash command for the current session (for example, /after 30m remind me the time or /after 1h /chronicle standup). With no arguments the schedule manager is displayed. Only available in experimental mode.",
+      "aliases": [],
+      "argsHint": "[DELAY PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/agent",
+      "description": "Browse and select from available agents (if any). See About custom agents.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/agents",
+      "description": "Configure default and per-agent subagent models. For an agent with modelPolicy: \"required\"—whether set in the agent's own definition or in the subagents settings override—the picker shows a locked Model entry and a Model enforcement row reading \"required - cannot be overridden\" (or \"required by agen",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/allow-all",
+      "description": "Enable all permissions (tools, paths, and URLs). This is an alias for /permissions allow-all; see the /permissions row for the canonical command and its subcommands.",
+      "aliases": [
+        "/permissions"
+      ],
+      "argsHint": "[off|auto|show]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/app",
+      "description": "Open the current session in the GitHub Copilot app (requires version 1.1.3 or later), or show the download URL if the app is not installed.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/ask",
+      "description": "Ask a quick side question without adding to the conversation history. See Asking a side question in GitHub Copilot CLI.",
+      "aliases": [],
+      "argsHint": "QUESTION",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/autopilot",
+      "description": "Start or refocus autopilot mode, optionally with an explicit objective (for example, /goal Refactor the auth module). Without an objective, autopilot infers intent from context, and the status panel shows your last prompt as the inferred objective. You can cap AI-credit spend for the objective by us",
+      "aliases": [],
+      "argsHint": "[OBJECTIVE]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/branch",
+      "description": "Fork the current session into a new session, optionally with a name.",
+      "aliases": [],
+      "argsHint": "[NAME]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/btw",
+      "description": "Ask a quick side question without adding to the conversation history. See Asking a side question in GitHub Copilot CLI.",
+      "aliases": [],
+      "argsHint": "QUESTION",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/bug",
+      "description": "Provide feedback about the CLI.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/caffeinate",
+      "description": "Prevent the machine from going to sleep: while a CLI session is active, while the agent is busy, or for a defined length of time. Accepts durations like 30, 30m, 2h, 1d (bare numbers default to minutes).",
+      "aliases": [],
+      "argsHint": "[on|off|busy|DURATION]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/cd",
+      "description": "Change the working directory or display the current directory.",
+      "aliases": [],
+      "argsHint": "[PATH]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/changelog",
+      "description": "Display the CLI changelog. Optionally specify a version, a count of recent releases, or a starting version. Add the keyword summarize for an AI-generated summary.",
+      "aliases": [],
+      "argsHint": "[summarize] [VERSION|last N|since VERSION]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/chronicle",
+      "description": "Session history tools and insights. The skills subcommands draft, review, and track the status of repository skill proposals generated from observed usage. See About GitHub Copilot CLI session data.",
+      "aliases": [],
+      "argsHint": "<standup|tips|improve|reindex|skills create|skills review|skills status>",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clear",
+      "description": "Start a new conversation.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clikit",
+      "description": "Preview CLI business components (for example, quota info).",
+      "aliases": [],
+      "argsHint": "[COMPONENT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compact",
+      "description": "Summarize the conversation history to reduce context window usage. Optionally provide focus instructions to steer the summary—for example, /compact focus on the auth module. See Managing context in GitHub Copilot CLI.",
+      "aliases": [],
+      "argsHint": "[FOCUS-INSTRUCTIONS]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/config",
+      "description": "Open the settings dialog, open it focused on a specific setting (KEY), set a setting inline (KEY VALUE), or display a setting's current value (show KEY). show masks secret-named values (for example, tokens or API keys nested under a setting) instead of printing them in clear text. The dialog shows U",
+      "aliases": [],
+      "argsHint": "[--repo|--local] [show KEY|KEY|KEY VALUE]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/context",
+      "description": "Show the context window token usage and visualization. See Managing context in GitHub Copilot CLI.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/continue",
+      "description": "Switch to a different session by choosing from a list (optionally specify a session ID).",
+      "aliases": [],
+      "argsHint": "[SESSION-ID]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy the last response to the clipboard.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/cwd",
+      "description": "Change the working directory or display the current directory.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/delegate",
+      "description": "Delegate changes to a remote repository with an AI-generated pull request. See Delegating tasks to Copilot.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/diagnose",
+      "description": "Analyze the current session log for errors, unexpected behavior, and other issues. Optionally include a custom prompt to focus the diagnosis on a specific problem.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/diff",
+      "description": "Review changes in the current directory; auto-switches to branch diff when the working tree is clean (experimental).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/downgrade",
+      "description": "Download and restart into a specific CLI version. Available for team accounts.",
+      "aliases": [],
+      "argsHint": "VERSION",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/env",
+      "description": "Show loaded environment details (instructions, MCP servers, skills, agents, hooks, plugins, LSPs, extensions).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/every",
+      "description": "Schedule a recurring prompt, skill, or schedulable slash command for the current session (for example, /every 1h run tests or /every 1d /chronicle standup). With no arguments the schedule manager is displayed. Only available in experimental mode.",
+      "aliases": [],
+      "argsHint": "[INTERVAL] PROMPT",
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/exit",
+      "description": "Close the current session. If other sessions are running, this foregrounds the newest remaining one instead of quitting. Quits the CLI only when it is the last open session. /exit print always tears down the CLI and offers to dump the transcript.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/experimental",
+      "description": "Toggle, set, or show experimental features.",
+      "aliases": [],
+      "argsHint": "[on|off|show]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/export",
+      "description": "Share the current session. With no subcommand, generates a shareable GitHub link when you're logged in and synced (falls back to Markdown file export otherwise). off stops sharing. link is an explicit alias for the default link flow; link off stops link sharing. file [session|research] [PATH] export",
+      "aliases": [],
+      "argsHint": "[...]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/extension",
+      "description": "Manage CLI extensions. Only available in experimental mode.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/extensions",
+      "description": "Manage CLI extensions. Only available in experimental mode.",
+      "aliases": [],
+      "argsHint": "[manage|mode]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/feedback",
+      "description": "Provide feedback about the CLI.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/find",
+      "description": "Search the conversation timeline.",
+      "aliases": [],
+      "argsHint": "[QUERY]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fleet",
+      "description": "Enable parallel subagent execution of parts of a task. See Running tasks in parallel with the \\/fleet\\ command.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/footer",
+      "description": "Configure which items appear in the status line.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fork",
+      "description": "Fork the current session into a new session, optionally with a name.",
+      "aliases": [],
+      "argsHint": "[NAME]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/goal",
+      "description": "Start or refocus autopilot mode, optionally with an explicit objective (for example, /goal Refactor the auth module). Without an objective, autopilot infers intent from context, and the status panel shows your last prompt as the inferred objective. You can cap AI-credit spend for the objective by us",
+      "aliases": [],
+      "argsHint": "[OBJECTIVE]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/help",
+      "description": "Show the help for interactive commands.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/ide",
+      "description": "Connect to an IDE workspace. See Connecting GitHub Copilot CLI to VS Code.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/init",
+      "description": "Initialize Copilot custom instructions and agentic features for this repository. See Project initialization for Copilot.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/instructions",
+      "description": "View and toggle custom instruction files.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/keep-alive",
+      "description": "Prevent the machine from going to sleep: while a CLI session is active, while the agent is busy, or for a defined length of time. Accepts durations like 30, 30m, 2h, 1d (bare numbers default to minutes).",
+      "aliases": [],
+      "argsHint": "[on|off|busy|DURATION]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/limits",
+      "description": "Open the interactive response limits dialog.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/list-dirs",
+      "description": "Display all of the directories for which file access has been allowed.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/login",
+      "description": "Log in to Copilot.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/logout",
+      "description": "Log out of Copilot.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/lsp",
+      "description": "Manage the language server configuration. The logs subcommand opens the live LSP services log panel.",
+      "aliases": [],
+      "argsHint": "[show|test|reload|logs|help] [SERVER-NAME]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/mcp",
+      "description": "Manage the MCP server configuration. With no subcommand, or with config, the plugins dashboard opens pinned to the MCP server list; the add, edit, and authenticate forms open inside that dashboard too, so closing a form returns you to the server list. Use show or show SERVER-NAME to display all conf",
+      "aliases": [],
+      "argsHint": "[config|list|show|add|edit|delete|disable|enable|auth|reload|search] [SERVER-NAME]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/model",
+      "description": "Select the AI model you want to use, or choose Auto. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the default model in repository settings instead; --global (or /con",
+      "aliases": [],
+      "argsHint": "[--session|--global|--repo|--local] [MODEL]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/models",
+      "description": "Select the AI model you want to use, or choose Auto. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the default model in repository settings instead; --global (or /con",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/move",
+      "description": "Move uncommitted changes into a new Git worktree and switch to it. Pass a branch name, a task description (multiline supported, used as the opening prompt in the new worktree), or omit the argument to auto-generate a branch name from the conversation. Requires a Git repository.",
+      "aliases": [],
+      "argsHint": "[branch|task]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/new",
+      "description": "Start a new conversation.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/permissions",
+      "description": "Switch between permission modes (default, assisted, allow-all), or show the current mode (show). This is the canonical command for permission mode changes; /allow-all and /yolo remain supported as aliases.",
+      "aliases": [],
+      "argsHint": "[default|assisted|allow-all|show]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/plan",
+      "description": "Create an implementation plan before coding.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/plugin",
+      "description": "Open the plugins dashboard showing your installed plugins. Select a plugin and press Enter for its details and for actions such as enabling, disabling, updating, or uninstalling it. Use the ← and → keys to switch between the Installed, Online, and Marketplace views. The dashboard shows only plugins—",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/pr",
+      "description": "Manage pull requests for the current branch. auto drives the pull request to green and stops; automerge (alias: agentmerge) drives the pull request to green and merges it. See Managing pull requests with the /pr command.",
+      "aliases": [],
+      "argsHint": "[view|create|fix|auto|automerge]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/quit",
+      "description": "Close the current session. If other sessions are running, this foregrounds the newest remaining one instead of quitting. Quits the CLI only when it is the last open session. /exit print always tears down the CLI and offers to dump the transcript.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/refine",
+      "description": "Rewrite a roughly composed prompt into a clear one for review. Run with no arguments (via Ctrl+X then /refine) to clean up the current input box. Can be particularly useful for prompts entered by speaking.",
+      "aliases": [],
+      "argsHint": "TEXT",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/release-notes",
+      "description": "Display the CLI changelog. Optionally specify a version, a count of recent releases, or a starting version. Add the keyword summarize for an AI-generated summary.",
+      "aliases": [],
+      "argsHint": "[summarize] [VERSION|last N|since VERSION]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/remote",
+      "description": "Show the remote control status (if no argument provided), enable remote steering (on), or end the remote connection (off). See Steering a GitHub Copilot CLI session from another device.",
+      "aliases": [],
+      "argsHint": "[on|off]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename the current session (auto-generates a name if omitted; alias for /session rename).",
+      "aliases": [
+        "/session"
+      ],
+      "argsHint": "[NAME]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/research",
+      "description": "Run a deep research investigation using GitHub search and web sources. See Researching with GitHub Copilot CLI.",
+      "aliases": [],
+      "argsHint": "TOPIC",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/reset",
+      "description": "Start a new conversation.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/reset-allowed-tools",
+      "description": "Reset the list of allowed tools.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/restart",
+      "description": "Restart the CLI, restoring all of the current process's live sessions, not only the foreground one. If the target CLI version can't restore multiple sessions, you're prompted to continue with only the foreground session or cancel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume",
+      "description": "Switch to a different session by choosing from a list (optionally specify a session ID).",
+      "aliases": [],
+      "argsHint": "[SESSION-ID]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/review",
+      "description": "Run the code review agent to analyze changes. See Requesting a code review with GitHub Copilot CLI.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rewind",
+      "description": "Open the rewind picker to roll the session back to an earlier user turn. Choose between: Conversation only (roll back the conversation, leaving files as they are) or Conversation + files (also restore the files Copilot changed in that turn, and later discarded turns, to their pre-change contents, sk",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rubber-duck",
+      "description": "Consult the rubber duck agent for a second opinion on plans, code, and tests. See About the rubber duck agent.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/sandbox",
+      "description": "Manage OS-level sandboxing that restricts filesystem and network access for shell commands, MCP/LSP servers, and built-in file/web tools. config (or bare /sandbox) opens the sandbox settings dialog. status shows whether sandboxing is enabled. policy shows the effective policy, with path grants group",
+      "aliases": [],
+      "argsHint": "[config|status|policy|enable|disable]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/search",
+      "description": "Search the conversation timeline.",
+      "aliases": [],
+      "argsHint": "[QUERY]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/security-review",
+      "description": "Run a focused security review of active local code changes and return prioritized vulnerability findings with remediation suggestions. This command is not a full repository security audit.",
+      "aliases": [],
+      "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/session",
+      "description": "Show session information and manage sessions. The info subcommand shows session details including the session link (when available). Subcommands: info, checkpoints, files, plan, rename, cleanup, prune, delete, delete-all.",
+      "aliases": [],
+      "argsHint": "[info|checkpoints [n]|files|plan|rename [NAME]|cleanup|prune|delete [ID]|delete-all]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/sessions",
+      "description": "Show session information and manage sessions. The info subcommand shows session details including the session link (when available). Subcommands: info, checkpoints, files, plan, rename, cleanup, prune, delete, delete-all.",
+      "aliases": [],
+      "argsHint": "[info|checkpoints [n]|files|plan|rename [NAME]|cleanup|prune|delete [ID]|delete-all]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/settings",
+      "description": "Open the settings dialog, open it focused on a specific setting (KEY), set a setting inline (KEY VALUE), or display a setting's current value (show KEY). show masks secret-named values (for example, tokens or API keys nested under a setting) instead of printing them in clear text. The dialog shows U",
+      "aliases": [],
+      "argsHint": "[--repo|--local] [show KEY|KEY|KEY VALUE]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/share",
+      "description": "Share the current session. With no subcommand, generates a shareable GitHub link when you're logged in and synced (falls back to Markdown file export otherwise). off stops sharing. link is an explicit alias for the default link flow; link off stops link sharing. file [session|research] [PATH] export",
+      "aliases": [],
+      "argsHint": "[link|off|file|html|gist|research] [...]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/skills",
+      "description": "Open the plugins dashboard on the Skills tab.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/statusline",
+      "description": "Configure which items appear in the status line.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/subagents",
+      "description": "Configure default and per-agent subagent models. For an agent with modelPolicy: \"required\"—whether set in the agent's own definition or in the subagents settings override—the picker shows a locked Model entry and a Model enforcement row reading \"required - cannot be overridden\" (or \"required by agen",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/tasks",
+      "description": "View and manage tasks (subagents and shell commands).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/terminal-setup",
+      "description": "Configure the terminal for multiline input support (Shift+Enter and Ctrl+Enter).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/theme",
+      "description": "View or set the color mode.",
+      "aliases": [],
+      "argsHint": "[default|github|dim|high-contrast|colorblind]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/tuikit",
+      "description": "Preview TUIkit design-system components and color tokens.",
+      "aliases": [],
+      "argsHint": "[colors|icons|select|tabbar]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/undo",
+      "description": "Open the rewind picker to roll the session back to an earlier user turn. Choose between: Conversation only (roll back the conversation, leaving files as they are) or Conversation + files (also restore the files Copilot changed in that turn, and later discarded turns, to their pre-change contents, sk",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/update",
+      "description": "Update the CLI to the latest version.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/upgrade",
+      "description": "Update the CLI to the latest version.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/usage",
+      "description": "Display session usage metrics and statistics, including per-model token totals. For token-based-billing accounts, each model's row also shows its own AI credit consumption (for example, 1 AIC). Billed models with no token counts show credits only.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/user",
+      "description": "Manage the current GitHub user.",
+      "aliases": [],
+      "argsHint": "[show|list|switch]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/version",
+      "description": "Display version information and check for updates.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/vim",
+      "description": "Toggle Vim mode for the prompt box, enabling Vim-style modal editing: motions (for example, hjkl, w, b, e, 0, $, gg, G), character search (f/F/t/T/;/,), insert commands (i/a/o), edit commands (r/~/J/x/D/C), operators (d/c/y), yank and put (y/p/P), repeat (.), undo and redo (u/Ctrl+R), counts, and Es",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/voice",
+      "description": "Toggle voice mode, browse available voice models, or choose the input device (microphone).",
+      "aliases": [],
+      "argsHint": "[on|off|models|devices]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/worktree",
+      "description": "Create a new Git worktree and switch to it, leaving uncommitted changes behind in the current worktree. Pass a branch name, a task description (multiline supported, used as the opening prompt in the new worktree), or omit the argument to auto-generate a branch name from the conversation. By default,",
+      "aliases": [],
+      "argsHint": "[branch|task]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
+    },
+    {
+      "name": "/yolo",
+      "description": "Enable all permissions (tools, paths, and URLs). This is an alias for /permissions allow-all; see the /permissions row for the canonical command and its subcommands.",
+      "aliases": [],
+      "argsHint": "[off|auto|show]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    }
+  ]
+}

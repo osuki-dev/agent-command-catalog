@@ -1,0 +1,352 @@
+{
+  "schemaVersion": 1,
+  "agent": "kilo",
+  "version": "7.7.9",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://raw.githubusercontent.com/Kilo-Org/kilocode/main/packages/kilo-docs/pages/code-with-ai/platforms/cli.md",
+    "revision": null,
+    "sha256": "9aa3d0d867981e85c80418a6334508f9aa795a971952adbada558ff5724ba98d"
+  },
+  "commands": [
+    {
+      "name": "/about",
+      "description": "Show version, runtime, configuration paths, and provider details; press c to copy diagnostics",
+      "aliases": [],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/agents",
+      "description": "Switch agent",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Agent & Model Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/auto-approve",
+      "description": "Toggle auto-approve mode for all permission prompts (saved to global config)",
+      "aliases": [
+        "/approve-all",
+        "/approveall",
+        "/autoapprove"
+      ],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/caffeinate",
+      "description": "Toggle Keep Awake: prevent system sleep while Kilo sessions run",
+      "aliases": [
+        "/caffenate"
+      ],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compact",
+      "description": "Compact/summarize session",
+      "aliases": [
+        "/summarize"
+      ],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/connect",
+      "description": "Connect/add a provider - entry point for new users to add API credentials",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Provider Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy latest agent response",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy-session",
+      "description": "Copy session transcript",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/diff",
+      "description": "Open the diff viewer",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/editor",
+      "description": "Open external editor",
+      "aliases": [],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/exit",
+      "description": "Exit the app",
+      "aliases": [
+        "/q",
+        "/quit"
+      ],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/export",
+      "description": "Export session transcript",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fork",
+      "description": "Fork from message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/goal",
+      "description": "Start, pause, resume, or clear a session goal",
+      "aliases": [],
+      "argsHint": "[objective | pause | resume | clear]",
+      "category": "Built-in Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/help",
+      "description": "Show help",
+      "aliases": [],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/init",
+      "description": "Create/update AGENTS.md file for the project",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/mcps",
+      "description": "Toggle MCPs",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Agent & Model Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/models",
+      "description": "Switch model",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Agent & Model Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/move",
+      "description": "Move the current session to another project directory",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/new",
+      "description": "New session",
+      "aliases": [
+        "/clear"
+      ],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/privacy",
+      "description": "Toggle privacy mode (blurs PII in the TUI)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/profile",
+      "description": "View your Kilo Gateway profile",
+      "aliases": [
+        "/me",
+        "/whoami"
+      ],
+      "argsHint": null,
+      "category": "Kilo Gateway Commands (when connected)",
+      "availability": "conditional"
+    },
+    {
+      "name": "/redo",
+      "description": "Redo message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/reload",
+      "description": "Reload every instance of the project from disk (config, skills, agents, and commands)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/remote",
+      "description": "Toggle remote mode for Cloud Agent access",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Kilo Gateway Commands (when connected)",
+      "availability": "conditional"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume-claude",
+      "description": "Import a Claude Code session transcript",
+      "aliases": [],
+      "argsHint": "[uuid]",
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume-codex",
+      "description": "Import an OpenAI Codex session transcript",
+      "aliases": [],
+      "argsHint": "[uuid]",
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/review",
+      "description": "Review code changes",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/sessions",
+      "description": "Switch session",
+      "aliases": [
+        "/continue",
+        "/resume"
+      ],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/share",
+      "description": "Share session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/status",
+      "description": "View status",
+      "aliases": [],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/teams",
+      "description": "Switch between Kilo Gateway teams",
+      "aliases": [
+        "/org",
+        "/orgs",
+        "/team"
+      ],
+      "argsHint": null,
+      "category": "Kilo Gateway Commands (when connected)",
+      "availability": "conditional"
+    },
+    {
+      "name": "/themes",
+      "description": "Switch theme",
+      "aliases": [],
+      "argsHint": null,
+      "category": "System Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/thinking",
+      "description": "Show/hide thinking blocks",
+      "aliases": [
+        "/toggle-thinking"
+      ],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/timeline",
+      "description": "Jump to message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/timestamps",
+      "description": "Show/hide timestamps",
+      "aliases": [
+        "/toggle-timestamps"
+      ],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/undo",
+      "description": "Undo previous message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/unshare",
+      "description": "Unshare session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session Commands",
+      "availability": "unknown"
+    }
+  ]
+}
