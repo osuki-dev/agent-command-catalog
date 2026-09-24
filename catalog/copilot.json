@@ -6,7 +6,7 @@
     "kind": "current-official-docs",
     "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
     "revision": null,
-    "sha256": "5fef1f2feb25b06ab9fc79e1cfa8e0900b49827d76fa9c8e356d32f4d4fd3790"
+    "sha256": "8082d544fb921f8772433381abfa9d3c629537f9619a2d7c5d9eb33dfb8aff2b"
   },
   "commands": [
     {
@@ -125,7 +125,7 @@
     },
     {
       "name": "/chronicle",
-      "description": "Session history tools and insights. The skills subcommands draft, review, and track the status of repository skill proposals generated from observed usage. See About GitHub Copilot CLI session data.",
+      "description": "Session history tools and insights. The skills subcommands draft, review, and track the status of repository skill proposals generated from observed usage. See Using GitHub Copilot CLI session data.",
       "aliases": [],
       "argsHint": "<standup|tips|improve|reindex|skills create|skills review|skills status>",
       "category": "Slash commands in the interactive interface",

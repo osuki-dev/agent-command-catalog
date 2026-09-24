@@ -8,5 +8,6 @@
   "droid": "catalog/droid.json",
   "kilo": "catalog/kilo.json",
   "qwen": "catalog/qwen.json",
-  "cursor": "catalog/cursor.json"
+  "cursor": "catalog/cursor.json",
+  "antigravity-cli": "catalog/antigravity-cli.json"
 }

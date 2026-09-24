@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 
-export const agents = ["claude-code", "codex-cli", "opencode", "qoder-cli", "pi", "copilot", "droid", "kilo", "qwen", "cursor"] as const;
+export const agents = ["claude-code", "codex-cli", "opencode", "qoder-cli", "pi", "copilot", "droid", "kilo", "qwen", "cursor", "antigravity-cli"] as const;
 export type Agent = (typeof agents)[number];
 export type Availability = "default" | "conditional" | "unknown";
 export type Command = {
@@ -209,6 +209,25 @@ export function parseCommandTable(markdown: string, startHeading: string, endHea
   return sorted([...commands.values()]);
 }
 
+export function parseAntigravity(markdown: string): Command[] {
+  const section = markdown.split("## Core slash commands\n")[1]?.split("\n## Default keybindings")[0];
+  if (!section) throw new Error("Antigravity CLI command table not found");
+  const commands: Command[] = [];
+  for (const line of section.split("\n")) {
+    if (!line.startsWith("|")) continue;
+    const [first, category, aliasCell, purpose] = markdownCells(line);
+    const name = first?.match(/`(\/[a-z][a-z0-9-]*)\b/)?.[1];
+    if (!name || !category || !purpose) continue;
+    const aliases = [...(aliasCell ?? "").matchAll(/\/[a-z][a-z0-9-]*/g)].map((match) => match[0]);
+    const argsHint = first?.match(/`\/[a-z][a-z0-9-]*\s+([^`]+)`/)?.[1]
+      ?? first?.match(/`\/[a-z][a-z0-9-]*`\s+(`[^`]+`|\\\[[^\]]+\\\])/)?.[1]
+      ?? null;
+    commands.push(makeCommand(name, purpose, category, aliases, argsHint, /paid plans/i.test(purpose) ? "conditional" : "unknown"));
+  }
+  if (commands.length < 20) throw new Error("Too few Antigravity CLI commands");
+  return sorted(commands);
+}
+
 export function validateCatalog(input: unknown): asserts input is Catalog {
   if (!input || typeof input !== "object") throw new Error("Catalog must be an object");
   const value = input as Partial<Catalog>;
@@ -243,6 +262,14 @@ async function fetchText(url: string): Promise<string> {
 }
 
 async function latestVersion(agent: Agent): Promise<string> {
+  if (agent === "antigravity-cli") {
+    const response = await fetch("https://api.github.com/repos/google-antigravity/antigravity-cli/releases/latest", { signal: AbortSignal.timeout(20_000), headers: { "user-agent": "agent-command-catalog/0.1" } });
+    if (!response.ok) throw new Error(`GitHub releases ${agent}: HTTP ${response.status}`);
+    const metadata: unknown = await response.json();
+    const version = (metadata as { tag_name?: unknown }).tag_name;
+    if (typeof version !== "string" || !versionPattern.test(version)) throw new Error(`GitHub releases ${agent}: invalid version`);
+    return version;
+  }
   const packageName = packages[agent];
   if (!packageName) return "current";
   const name = encodeURIComponent(packageName);
@@ -267,6 +294,7 @@ export async function collect(agent: Agent, version: string): Promise<Catalog> {
     kilo: "https://raw.githubusercontent.com/Kilo-Org/kilocode/main/packages/kilo-docs/pages/code-with-ai/platforms/cli.md",
     qwen: "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
     cursor: "https://cursor.com/docs/cli/reference/slash-commands.md",
+    "antigravity-cli": "https://antigravity.google/docs/cli/reference.md",
   };
   const url = agent === "codex-cli" ? `https://raw.githubusercontent.com/openai/codex/${revision}/codex-rs/tui/src/slash_command.rs`
     : agent === "opencode" ? `https://github.com/anomalyco/opencode/tree/${revision}/packages/tui/src`
@@ -288,6 +316,7 @@ export async function collect(agent: Agent, version: string): Promise<Catalog> {
               : agent === "droid" ? parseCommandTable(source, "### Slash commands", "### Git worktrees")
                 : agent === "kilo" ? parseCommandTable(source, "### Interactive Slash Commands", "### Importing Claude Code")
                   : agent === "qwen" ? parseCommandTable(source, "## 1. Slash Commands", "## 2. @ Commands")
+                    : agent === "antigravity-cli" ? parseAntigravity(source)
                     : parseCommandTable(source, "# Slash commands");
   const catalog: Catalog = {
     schemaVersion: 1,

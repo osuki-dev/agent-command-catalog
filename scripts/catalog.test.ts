@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { parseClaude, parseCodex, parseCommandTable, parseOpenCode, parseQoder, validateCatalog } from "./catalog";
+import { parseAntigravity, parseClaude, parseCodex, parseCommandTable, parseOpenCode, parseQoder, validateCatalog } from "./catalog";
 
 describe("official source collectors", () => {
   test("Claude skips removed commands and keeps aliases", () => {
@@ -80,6 +80,14 @@ impl SlashCommand {
     expect(commands.map((command) => command.name)).toEqual(["/goal", "/help", "/model", "/new", "/sessions"]);
     expect(commands.find((command) => command.name === "/sessions")?.aliases).toEqual(["/continue", "/resume"]);
     expect(commands.find((command) => command.name === "/goal")).toMatchObject({ argsHint: "[objective]", availability: "conditional" });
+  });
+
+  test("Antigravity CLI parses its official reference table", () => {
+    const rows = Array.from({ length: 19 }, (_, index) => `| **\`/example-${index}\`** | Utilities | — | Example ${index}. |`).join("\n");
+    const markdown = `## Core slash commands\n| Command | Category | Alias | Execution Purpose |\n${rows}\n| **\`/clear\`** | Utilities | \`/new\` | Reset context. |\n## Default keybindings\n`;
+    const commands = parseAntigravity(markdown);
+    expect(commands.find((command) => command.name === "/clear")).toMatchObject({ aliases: ["/new"], description: "Reset context." });
+    expect(commands).toHaveLength(20);
   });
 });
 

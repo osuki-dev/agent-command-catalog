@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "agent": "claude-code",
-  "version": "2.1.280",
+  "version": "2.1.281",
   "source": {
     "kind": "current-official-docs",
     "url": "https://code.claude.com/docs/en/commands.md",

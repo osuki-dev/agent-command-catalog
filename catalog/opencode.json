@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "opencode",
-  "version": "2.0.15",
+  "version": "2.0.16",
   "source": {
     "kind": "tagged-source",
-    "url": "https://github.com/anomalyco/opencode/tree/v2.0.15/packages/tui/src",
-    "revision": "v2.0.15",
-    "sha256": "b6140f72544e2f9b8252e1bb0b029d17edfa0ec9e1e3c1c3c7639c316bc33dfa"
+    "url": "https://github.com/anomalyco/opencode/tree/v2.0.16/packages/tui/src",
+    "revision": "v2.0.16",
+    "sha256": "27e2363e8f5f24d315e67970b0f29dba4fa5510edcddbbee59d12ccd25a7bfb1"
   },
   "commands": [
     {

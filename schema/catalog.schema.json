@@ -6,7 +6,7 @@
   "required": ["schemaVersion", "agent", "version", "source", "commands"],
   "properties": {
     "schemaVersion": { "const": 1 },
-    "agent": { "enum": ["claude-code", "codex-cli", "opencode", "qoder-cli", "pi", "copilot", "droid", "kilo", "qwen", "cursor"] },
+    "agent": { "enum": ["claude-code", "codex-cli", "opencode", "qoder-cli", "pi", "copilot", "droid", "kilo", "qwen", "cursor", "antigravity-cli"] },
     "version": { "type": "string", "pattern": "^(current|[0-9]+\\.[0-9]+\\.[0-9]+)" },
     "source": {
       "type": "object",

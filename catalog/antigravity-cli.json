@@ -1,0 +1,312 @@
+{
+  "schemaVersion": 1,
+  "agent": "antigravity-cli",
+  "version": "1.2.10",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://antigravity.google/docs/cli/reference.md",
+    "revision": null,
+    "sha256": "4e7eef316b1f7fb0f4ad2240548e3f66c7820f3364111f4d18dfa434dc8dc39e"
+  },
+  "commands": [
+    {
+      "name": "/add-dir",
+      "description": "Add a directory path to the active workspace.",
+      "aliases": [],
+      "argsHint": "<path>",
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/agents",
+      "description": "Open the Agent Manager Panel to switch custom agents and monitor background subagents.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
+      "name": "/artifact",
+      "description": "Open the Artifact Review Panel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
+      "name": "/boost",
+      "description": "Run on-demand multi-agent deep reasoning loops.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Reasoning",
+      "availability": "unknown"
+    },
+    {
+      "name": "/btw",
+      "description": "Ask a side question in the background without interrupting the main conversation.",
+      "aliases": [],
+      "argsHint": "<query>",
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clear",
+      "description": "Clear the terminal and reset active conversation contexts.",
+      "aliases": [
+        "/new"
+      ],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/config",
+      "description": "Open the interactive Settings Editor Overlay.",
+      "aliases": [
+        "/settings"
+      ],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/context",
+      "description": "Open the context usage visualization panel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy the last agent response to the system clipboard.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/credits",
+      "description": "View remaining G1 credits and purchase links.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account",
+      "availability": "unknown"
+    },
+    {
+      "name": "/diff",
+      "description": "Open the Interactive Diff Viewer to view changes, turns, and commits.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/exit",
+      "description": "Close the TUI session and restore your host shell.",
+      "aliases": [
+        "/quit"
+      ],
+      "argsHint": null,
+      "category": "Core",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fast",
+      "description": "Enable fast mode (bypass reasoning plans) for quick actions.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/feedback",
+      "description": "Open the feedback submission panel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fork",
+      "description": "Clone the current conversation thread into a new parallel session.",
+      "aliases": [
+        "/branch"
+      ],
+      "argsHint": null,
+      "category": "Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/help",
+      "description": "Open the help panel showing commands and shortcuts.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/hooks",
+      "description": "Browse active pre-flight/post-format script hooks.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
+      "name": "/keybindings",
+      "description": "Open the interactive Keyboard Shortcut Editor.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/logout",
+      "description": "Disconnect your profile and purge authentication tokens from the secure keyring.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account",
+      "availability": "unknown"
+    },
+    {
+      "name": "/mcp",
+      "description": "Open the Model Context Protocol (MCP) server manager.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
+      "name": "/model",
+      "description": "Choose your preferred reasoning model (persists across sessions).",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/open",
+      "description": "Force the path to open inside your default system editor.",
+      "aliases": [],
+      "argsHint": "<path>",
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/permissions",
+      "description": "Open the interactive tool permissions manager panel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/planning",
+      "description": "Enable multi-turn plan generation mode for complex engineering tasks.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/remote-control",
+      "description": "Toggle Remote Control for the active terminal session.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename the current session thread.",
+      "aliases": [],
+      "argsHint": "<name>",
+      "category": "Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume",
+      "description": "Open the conversation picker overlay to select and load previous threads.",
+      "aliases": [
+        "/conversation",
+        "/switch"
+      ],
+      "argsHint": null,
+      "category": "Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rewind",
+      "description": "Roll back your conversation history to a previous message.",
+      "aliases": [
+        "/undo"
+      ],
+      "argsHint": null,
+      "category": "Conversations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/skills",
+      "description": "Browse loaded local and global Agent Skills.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
+      "name": "/statusline",
+      "description": "Open the Status Bar customization overlay.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/tasks",
+      "description": "Open the Task Manager Panel to monitor background shell execution logs.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
+      "name": "/teamwork-preview",
+      "description": "Launch collaborative multi-agent teams for long-horizon projects (paid plans).",
+      "aliases": [
+        "/teamwork"
+      ],
+      "argsHint": null,
+      "category": "Reasoning",
+      "availability": "conditional"
+    },
+    {
+      "name": "/title",
+      "description": "Toggle or set terminal window title updates.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Configurations",
+      "availability": "unknown"
+    },
+    {
+      "name": "/usage",
+      "description": "Display model quota usage.",
+      "aliases": [
+        "/quota"
+      ],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/voice",
+      "description": "Dictate a prompt using your microphone.",
+      "aliases": [
+        "/record"
+      ],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    }
+  ]
+}
