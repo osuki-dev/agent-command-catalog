@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "claude-code",
-  "version": "2.1.281",
+  "version": "2.1.283",
   "source": {
     "kind": "current-official-docs",
     "url": "https://code.claude.com/docs/en/commands.md",
     "revision": null,
-    "sha256": "546a2e05530f6d71fb31adb960fa60fd2a07f27ab70501a61a68d28385845369"
+    "sha256": "f0b71855bab62002c1bf410afc7d0e41b825ba8b3b6b8fa13da6fa142f6b8098"
   },
   "commands": [
     {
@@ -77,7 +77,7 @@
     },
     {
       "name": "/batch",
-      "description": "Skill. Orchestrate large-scale changes across a codebase in parallel. Researches the codebase, decomposes the work into 5 to 30 independent units, and presents a plan. Once approved, spawns one background subagent per unit in an isolated git worktree. Each subagent implements its unit, runs tests, a",
+      "description": "Skill. Orchestrate large-scale changes across a codebase in parallel. Researches the codebase, decomposes the work into 5 to 30 independent units, and presents a plan. Once approved, spawns one background subagent per unit in an isolated worktree. Each subagent implements its unit, runs tests, and p",
       "aliases": [],
       "argsHint": "<instruction>",
       "category": "Built-in",
@@ -267,7 +267,7 @@
       "name": "/doctor",
       "description": "Skill. Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, PATH problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow hooks, and checks for a newer ve",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[prompt-audit [path]]",
       "category": "Built-in",
       "availability": "unknown"
     },

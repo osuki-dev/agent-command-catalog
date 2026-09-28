@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "agent": "antigravity-cli",
-  "version": "1.2.10",
+  "version": "1.2.12",
   "source": {
     "kind": "current-official-docs",
     "url": "https://antigravity.google/docs/cli/reference.md",

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "agent": "kilo",
-  "version": "7.7.9",
+  "version": "7.8.1",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/Kilo-Org/kilocode/main/packages/kilo-docs/pages/code-with-ai/platforms/cli.md",
