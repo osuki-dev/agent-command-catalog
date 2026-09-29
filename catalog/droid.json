@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "agent": "droid",
-  "version": "0.226.2",
+  "version": "0.228.0",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.factory.ai/droid-cli/cli-reference.md",

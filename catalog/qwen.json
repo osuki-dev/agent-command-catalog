@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "qwen",
-  "version": "0.24.4",
+  "version": "0.24.6",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
     "revision": null,
-    "sha256": "483da3ca2f29c11adabebafb6e2a1f4094b57823d57b9b22530cbde5637c8841"
+    "sha256": "ad61fbdf6ae3fc097f238d880c14c68dbcb9eb8030b2065922046cf9bc37f741"
   },
   "commands": [
     {
@@ -87,6 +87,14 @@
       "aliases": [],
       "argsHint": null,
       "category": "Interface and Workspace Control",
+      "availability": "unknown"
+    },
+    {
+      "name": "/commit",
+      "description": "Create a git commit with an AI-drafted message",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
       "availability": "unknown"
     },
     {
