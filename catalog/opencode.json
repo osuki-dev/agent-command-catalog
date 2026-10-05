@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "opencode",
-  "version": "2.0.18",
+  "version": "2.0.23",
   "source": {
     "kind": "tagged-source",
-    "url": "https://github.com/anomalyco/opencode/tree/v2.0.18/packages/tui/src",
-    "revision": "v2.0.18",
-    "sha256": "bfe12c8d8203b9612e5a6dbca409cff564277918583e296d5a357bebb2ce634f"
+    "url": "https://github.com/anomalyco/opencode/tree/v2.0.23/packages/tui/src",
+    "revision": "v2.0.23",
+    "sha256": "a66330bfa66ccb8671a526823af80e0264c385c6b19972ac24daad3ea73e7750"
   },
   "commands": [
     {
@@ -251,14 +251,6 @@
       "argsHint": null,
       "category": "Session",
       "availability": "default"
-    },
-    {
-      "name": "/unshare",
-      "description": "Unshare session",
-      "aliases": [],
-      "argsHint": null,
-      "category": "Session",
-      "availability": "conditional"
     },
     {
       "name": "/update",
