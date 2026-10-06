@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "antigravity-cli",
-  "version": "1.2.12",
+  "version": "1.2.17",
   "source": {
     "kind": "current-official-docs",
     "url": "https://antigravity.google/docs/cli/reference.md",
     "revision": null,
-    "sha256": "4e7eef316b1f7fb0f4ad2240548e3f66c7820f3364111f4d18dfa434dc8dc39e"
+    "sha256": "afba197cdc02c9483314263c9268d4b419eca3daaa793c0d475c0ac850faf3f3"
   },
   "commands": [
     {
@@ -19,7 +19,7 @@
     },
     {
       "name": "/agents",
-      "description": "Open the Agent Manager Panel to switch custom agents and monitor background subagents.",
+      "description": "Open the Agent Manager panel to switch custom agents and monitor background subagents.",
       "aliases": [],
       "argsHint": null,
       "category": "Tools & Tasks",
@@ -27,7 +27,7 @@
     },
     {
       "name": "/artifact",
-      "description": "Open the Artifact Review Panel.",
+      "description": "Open the Artifact Review panel.",
       "aliases": [],
       "argsHint": null,
       "category": "Tools & Tasks",
@@ -61,7 +61,7 @@
     },
     {
       "name": "/config",
-      "description": "Open the interactive Settings Editor Overlay.",
+      "description": "Open the interactive Settings Editor overlay.",
       "aliases": [
         "/settings"
       ],
@@ -95,7 +95,7 @@
     },
     {
       "name": "/diff",
-      "description": "Open the Interactive Diff Viewer to view changes, turns, and commits.",
+      "description": "Open the interactive diff viewer to view changes, turns, and commits.",
       "aliases": [],
       "argsHint": null,
       "category": "Utilities",
@@ -210,6 +210,16 @@
       "availability": "unknown"
     },
     {
+      "name": "/plugin",
+      "description": "Open the interactive Plugins Manager or run inline install, uninstall, enable, disable, and list commands.",
+      "aliases": [
+        "/plugins"
+      ],
+      "argsHint": null,
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
       "name": "/remote-control",
       "description": "Toggle Remote Control for the active terminal session.",
       "aliases": [],
@@ -264,7 +274,7 @@
     },
     {
       "name": "/tasks",
-      "description": "Open the Task Manager Panel to monitor background shell execution logs.",
+      "description": "Open the Task Manager panel to monitor background shell execution logs.",
       "aliases": [],
       "argsHint": null,
       "category": "Tools & Tasks",

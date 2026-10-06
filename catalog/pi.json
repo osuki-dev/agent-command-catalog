@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "agent": "pi",
-  "version": "0.87.1",
+  "version": "1.0.3",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/slash-commands.md",

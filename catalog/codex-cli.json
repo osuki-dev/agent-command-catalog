@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
   "agent": "codex-cli",
-  "version": "0.158.0",
+  "version": "0.160.0",
   "source": {
     "kind": "tagged-source",
-    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.158.0/codex-rs/tui/src/slash_command.rs",
-    "revision": "rust-v0.158.0",
+    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.160.0/codex-rs/tui/src/slash_command.rs",
+    "revision": "rust-v0.160.0",
     "sha256": "6da344165206be25ba2751dd611121e478fe00d262ad0861d3e05a89ee97818b"
   },
   "commands": [

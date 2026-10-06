@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "copilot",
-  "version": "1.0.88",
+  "version": "1.0.91",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
     "revision": null,
-    "sha256": "8082d544fb921f8772433381abfa9d3c629537f9619a2d7c5d9eb33dfb8aff2b"
+    "sha256": "66198ea49c0f2f223d9466474f30c4a2a714c79a376a6022127d640996f9dd4d"
   },
   "commands": [
     {
@@ -77,7 +77,7 @@
     },
     {
       "name": "/branch",
-      "description": "Fork the current session into a new session, optionally with a name.",
+      "description": "Fork the current session into a new session, optionally with a name. Usable while the agent is running—the source session keeps working in the background. /fork worktree forks the current session, preserving its conversation context, into a new Git worktree branched off HEAD.",
       "aliases": [],
       "argsHint": "[NAME]",
       "category": "Slash commands in the interactive interface",
@@ -133,7 +133,7 @@
     },
     {
       "name": "/clear",
-      "description": "Start a new conversation.",
+      "description": "Start a new conversation. /new worktree starts an empty session in a new Git worktree instead of clearing the current one, leaving the current conversation and its working directory unchanged.",
       "aliases": [],
       "argsHint": "[PROMPT]",
       "category": "Slash commands in the interactive interface",
@@ -245,7 +245,7 @@
     },
     {
       "name": "/exit",
-      "description": "Close the current session. If other sessions are running, this foregrounds the newest remaining one instead of quitting. Quits the CLI only when it is the last open session. /exit print always tears down the CLI and offers to dump the transcript.",
+      "description": "Close the current session. If other sessions are running, this foregrounds the newest remaining one instead of quitting. Quits the CLI only when it is the last open session. /exit print always tears down the CLI and offers to dump the transcript. /exit and /quit (including their print variant) can a",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
@@ -317,7 +317,7 @@
     },
     {
       "name": "/fork",
-      "description": "Fork the current session into a new session, optionally with a name.",
+      "description": "Fork the current session into a new session, optionally with a name. Usable while the agent is running—the source session keeps working in the background. /fork worktree forks the current session, preserving its conversation context, into a new Git worktree branched off HEAD.",
       "aliases": [],
       "argsHint": "[NAME]",
       "category": "Slash commands in the interactive interface",
@@ -423,7 +423,7 @@
       "name": "/model",
       "description": "Select the AI model you want to use, or choose Auto. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the default model in repository settings instead; --global (or /con",
       "aliases": [],
-      "argsHint": "[--session|--global|--repo|--local] [MODEL]",
+      "argsHint": "[--session|--global|--repo|--local] [MODEL|auto TIER]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     },
@@ -445,7 +445,7 @@
     },
     {
       "name": "/new",
-      "description": "Start a new conversation.",
+      "description": "Start a new conversation. /new worktree starts an empty session in a new Git worktree instead of clearing the current one, leaving the current conversation and its working directory unchanged.",
       "aliases": [],
       "argsHint": "[PROMPT]",
       "category": "Slash commands in the interactive interface",
@@ -477,7 +477,7 @@
     },
     {
       "name": "/pr",
-      "description": "Manage pull requests for the current branch. auto drives the pull request to green and stops; automerge (alias: agentmerge) drives the pull request to green and merges it. See Managing pull requests with the /pr command.",
+      "description": "Manage pull requests for the current branch. auto drives the pull request to green and stops; automerge (alias: agentmerge) drives the pull request to green and merges it. When the repository has a pull request template (.github/pullrequesttemplate.md or a file under .github/PULLREQUESTTEMPLATE/), c",
       "aliases": [],
       "argsHint": "[view|create|fix|auto|automerge]",
       "category": "Slash commands in the interactive interface",
@@ -485,7 +485,7 @@
     },
     {
       "name": "/quit",
-      "description": "Close the current session. If other sessions are running, this foregrounds the newest remaining one instead of quitting. Quits the CLI only when it is the last open session. /exit print always tears down the CLI and offers to dump the transcript.",
+      "description": "Close the current session. If other sessions are running, this foregrounds the newest remaining one instead of quitting. Quits the CLI only when it is the last open session. /exit print always tears down the CLI and offers to dump the transcript. /exit and /quit (including their print variant) can a",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
@@ -535,7 +535,7 @@
     },
     {
       "name": "/reset",
-      "description": "Start a new conversation.",
+      "description": "Start a new conversation. /new worktree starts an empty session in a new Git worktree instead of clearing the current one, leaving the current conversation and its working directory unchanged.",
       "aliases": [],
       "argsHint": "[PROMPT]",
       "category": "Slash commands in the interactive interface",
@@ -764,6 +764,14 @@
       "argsHint": "[on|off|models|devices]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
+    },
+    {
+      "name": "/workflows",
+      "description": "Observe workflow runs, phases, agents, and progress. Requires a token-based-billing plan. See Using copilot workflow run to run a registered workflow directly.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "conditional"
     },
     {
       "name": "/worktree",
