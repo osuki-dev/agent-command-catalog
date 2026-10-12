@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "claude-code",
-  "version": "2.1.289",
+  "version": "2.1.296",
   "source": {
     "kind": "current-official-docs",
     "url": "https://code.claude.com/docs/en/commands.md",
     "revision": null,
-    "sha256": "23a73ce7bf2013b42ac8c8f86e07e1f9231f10fe060ae013575123af6d97982d"
+    "sha256": "30873851a2ac792fe7f256ef0784df84579769bbaa727553f1865d63a86de58a"
   },
   "commands": [
     {
@@ -205,7 +205,7 @@
     },
     {
       "name": "/copy",
-      "description": "Copy the last assistant response to clipboard. Pass a number N to copy the Nth-latest response: /copy 2 copies the second-to-last. When code blocks are present, shows an interactive picker to select individual blocks or the full response. Press w in the picker to write the selection to a file instea",
+      "description": "Copy the last assistant response to clipboard. Pass a number N to copy the Nth-latest response: /copy 2 copies the second-to-last. When code blocks or blockquotes are present, shows an interactive picker to select individual blocks or the full response. Press w in the picker to write the selection t",
       "aliases": [],
       "argsHint": "[N]",
       "category": "Built-in",
@@ -289,7 +289,7 @@
     },
     {
       "name": "/doctor",
-      "description": "Skill. Run a setup checkup that diagnoses issues and can fix them. Checks installation health, including duplicate or leftover installs, PATH problems, and unparseable settings files. Finds unused skills, MCP servers, and plugins versus their context cost, flags slow hooks, and checks for a newer ve",
+      "description": "Skill. Run a setup checkup that diagnoses installation, settings, extension, and CLAUDE.md problems and proposes fixes that Claude applies after you confirm. For what the checkup covers, or to audit your instructions with prompt-audit instead, see Check your setup with /doctor. The prompt-audit subc",
       "aliases": [],
       "argsHint": "[prompt-audit [path]]",
       "category": "Built-in",
@@ -485,7 +485,7 @@
     },
     {
       "name": "/mcp",
-      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass reconnect, enable, or disable with a server name or all to change connection state without opening it. reconnect all retries every server that failed or needs authentication. Also avail",
+      "description": "Manage MCP server connections and OAuth authentication. Run with no argument to open the interactive list, or pass reconnect, enable, or disable with a server name or all to change connection state without opening it. reconnect all retries every server that failed or needs authentication. In non-int",
       "aliases": [],
       "argsHint": "[reconnect (<server>|all)|enable|disable [<server>|all]]",
       "category": "Built-in",
@@ -722,7 +722,7 @@
     },
     {
       "name": "/scroll-speed",
-      "description": "Adjust mouse wheel scroll speed interactively, with a ruler you can scroll while the dialog is open to preview the change. Available in fullscreen rendering only and not in the JetBrains IDE terminal",
+      "description": "Adjust mouse wheel scroll speed interactively. Available in fullscreen rendering only and not in the JetBrains IDE terminal",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "copilot",
-  "version": "1.0.91",
+  "version": "1.0.95",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
     "revision": null,
-    "sha256": "66198ea49c0f2f223d9466474f30c4a2a714c79a376a6022127d640996f9dd4d"
+    "sha256": "53380857e574ce548b0a347f09b5fee752cb605b06587d68e3b3ee441b8ed60f"
   },
   "commands": [
     {
@@ -93,7 +93,7 @@
     },
     {
       "name": "/bug",
-      "description": "Provide feedback about the CLI.",
+      "description": "Provide feedback about the CLI. Can offer a feedback-with-logs route; see Collecting and sharing debug logs.",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
@@ -144,6 +144,14 @@
       "description": "Preview CLI business components (for example, quota info).",
       "aliases": [],
       "argsHint": "[COMPONENT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/collect-debug-logs",
+      "description": "Collect debug logs to an archive, a GitHub gist, or upload them to GitHub (share). See Collecting and sharing debug logs.",
+      "aliases": [],
+      "argsHint": "[file|gist|share] [PATH]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     },
@@ -285,7 +293,7 @@
     },
     {
       "name": "/feedback",
-      "description": "Provide feedback about the CLI.",
+      "description": "Provide feedback about the CLI. Can offer a feedback-with-logs route; see Collecting and sharing debug logs.",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
@@ -591,9 +599,9 @@
     },
     {
       "name": "/sandbox",
-      "description": "Manage OS-level sandboxing that restricts filesystem and network access for shell commands, MCP/LSP servers, and built-in file/web tools. config (or bare /sandbox) opens the sandbox settings dialog. status shows whether sandboxing is enabled. policy shows the effective policy, with path grants group",
+      "description": "Manage sandbox restrictions on filesystem and network access. config (or bare /sandbox) opens the settings dialog. status shows whether sandboxing is enabled for the current session. When sandboxing is enabled, policy shows path grants and restrictions grouped by source and access type, network sett",
       "aliases": [],
-      "argsHint": "[config|status|policy|enable|disable]",
+      "argsHint": "[config|status|policy [COMMAND]|enable|disable]",
       "category": "Slash commands in the interactive interface",
       "availability": "conditional"
     },
@@ -735,7 +743,7 @@
     },
     {
       "name": "/user",
-      "description": "Manage the current GitHub user.",
+      "description": "Manage signed-in accounts.",
       "aliases": [],
       "argsHint": "[show|list|switch]",
       "category": "Slash commands in the interactive interface",
