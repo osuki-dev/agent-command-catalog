@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "agent": "qwen",
-  "version": "0.25.0",
+  "version": "0.25.1",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "codex-cli",
-  "version": "0.160.0",
+  "version": "0.162.1",
   "source": {
     "kind": "tagged-source",
-    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.160.0/codex-rs/tui/src/slash_command.rs",
-    "revision": "rust-v0.160.0",
-    "sha256": "6da344165206be25ba2751dd611121e478fe00d262ad0861d3e05a89ee97818b"
+    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.162.1/codex-rs/tui/src/slash_command.rs",
+    "revision": "rust-v0.162.1",
+    "sha256": "43ab51f82ea1ce9aec67b8e563fc9f8c750c0ea7c2119e009aede8ee2e5e7d79"
   },
   "commands": [
     {
@@ -92,6 +92,14 @@
     {
       "name": "/daemon",
       "description": "Manage the local background server",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/daybreak",
+      "description": "turn Daybreak on or off",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
@@ -219,7 +227,7 @@
     },
     {
       "name": "/mcp",
-      "description": "list configured MCP tools; use /mcp verbose for details",
+      "description": "list MCP tools; use /mcp verbose or /mcp login",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
