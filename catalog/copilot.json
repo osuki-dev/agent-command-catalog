@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "agent": "copilot",
-  "version": "1.0.95",
+  "version": "1.0.98",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
     "revision": null,
-    "sha256": "53380857e574ce548b0a347f09b5fee752cb605b06587d68e3b3ee441b8ed60f"
+    "sha256": "66ac4e96773729e6d8e2ce14e0c85a06afda70ada44947555878245e73be8a35"
   },
   "commands": [
     {
       "name": "/add-dir",
-      "description": "Allow file access to a directory and load its .github/skills and .github/agents as trusted configurations.",
+      "description": "Allow file access to a directory and load its .github/skills and .github/agents as trusted configurations. When sandboxing is enabled, also grants the sandbox access to the directory for the current session.",
       "aliases": [],
       "argsHint": "PATH",
       "category": "Slash commands in the interactive interface",
@@ -61,9 +61,9 @@
     },
     {
       "name": "/ask",
-      "description": "Ask a quick side question without adding to the conversation history. See Asking a side question in GitHub Copilot CLI.",
+      "description": "Ask a quick side question without adding to the conversation history. The response renders as Markdown. In the answer dialog, press Ctrl+E to expand it and Ctrl+Y to copy the full answer. Enter the command without a question to reopen the last side question answer in the current session. See Asking ",
       "aliases": [],
-      "argsHint": "QUESTION",
+      "argsHint": "[QUESTION]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     },
@@ -85,9 +85,9 @@
     },
     {
       "name": "/btw",
-      "description": "Ask a quick side question without adding to the conversation history. See Asking a side question in GitHub Copilot CLI.",
+      "description": "Ask a quick side question without adding to the conversation history. The response renders as Markdown. In the answer dialog, press Ctrl+E to expand it and Ctrl+Y to copy the full answer. Enter the command without a question to reopen the last side question answer in the current session. See Asking ",
       "aliases": [],
-      "argsHint": "QUESTION",
+      "argsHint": "[QUESTION]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     },
@@ -157,7 +157,7 @@
     },
     {
       "name": "/compact",
-      "description": "Summarize the conversation history to reduce context window usage. Optionally provide focus instructions to steer the summary—for example, /compact focus on the auth module. See Managing context in GitHub Copilot CLI.",
+      "description": "Summarize the conversation history to reduce context window usage. Optionally provide focus instructions to steer the summary—for example, /compact focus on the auth module. See Managing context for GitHub Copilot.",
       "aliases": [],
       "argsHint": "[FOCUS-INSTRUCTIONS]",
       "category": "Slash commands in the interactive interface",
@@ -173,7 +173,7 @@
     },
     {
       "name": "/context",
-      "description": "Show the context window token usage and visualization. See Managing context in GitHub Copilot CLI.",
+      "description": "Show the context window token usage and visualization. See Managing context for GitHub Copilot.",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
@@ -309,7 +309,7 @@
     },
     {
       "name": "/fleet",
-      "description": "Enable parallel subagent execution of parts of a task. See Running tasks in parallel with the \\/fleet\\ command.",
+      "description": "Enable parallel subagent execution of parts of a task. See Speeding up task completion with the \\/fleet\\ command.",
       "aliases": [],
       "argsHint": "[PROMPT]",
       "category": "Slash commands in the interactive interface",
@@ -429,7 +429,7 @@
     },
     {
       "name": "/model",
-      "description": "Select the AI model you want to use, or choose Auto. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the default model in repository settings instead; --global (or /con",
+      "description": "Select the AI model you want to use, or choose Auto. Model IDs are case-insensitive, and the canonical ID is saved. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the ",
       "aliases": [],
       "argsHint": "[--session|--global|--repo|--local] [MODEL|auto TIER]",
       "category": "Slash commands in the interactive interface",
@@ -437,7 +437,7 @@
     },
     {
       "name": "/models",
-      "description": "Select the AI model you want to use, or choose Auto. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the default model in repository settings instead; --global (or /con",
+      "description": "Select the AI model you want to use, or choose Auto. Model IDs are case-insensitive, and the canonical ID is saved. By default (or with --session, alias -s), changes the model, reasoning effort, or context window for the current session only, without touching saved settings. --repo/--local pins the ",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
@@ -591,7 +591,7 @@
     },
     {
       "name": "/rubber-duck",
-      "description": "Consult the rubber duck agent for a second opinion on plans, code, and tests. See About the rubber duck agent.",
+      "description": "Consult the rubber duck agent for a second opinion on plans, code, and tests. See Getting a second opinion with the rubber duck agent.",
       "aliases": [],
       "argsHint": "[PROMPT]",
       "category": "Slash commands in the interactive interface",
@@ -599,7 +599,7 @@
     },
     {
       "name": "/sandbox",
-      "description": "Manage sandbox restrictions on filesystem and network access. config (or bare /sandbox) opens the settings dialog. status shows whether sandboxing is enabled for the current session. When sandboxing is enabled, policy shows path grants and restrictions grouped by source and access type, network sett",
+      "description": "Manage sandbox restrictions on filesystem and network access. config (or bare /sandbox) opens the settings dialog, which suggests possible environment secrets and lets you add masking hosts before saving. The dialog's General tab has separate options for enabling sandboxing for the current session a",
       "aliases": [],
       "argsHint": "[config|status|policy [COMMAND]|enable|disable]",
       "category": "Slash commands in the interactive interface",

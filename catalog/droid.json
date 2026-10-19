@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "droid",
-  "version": "0.238.0",
+  "version": "0.244.0",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.factory.ai/droid-cli/cli-reference.md",
     "revision": null,
-    "sha256": "1e7c8306bcd0c8c32e05ce1edbfde87d095c83508329da903e96cdc1ca4b5fff"
+    "sha256": "6b6fd7dd85134a336d1745cf4584bdfd09e1a847a9293bbfa878daec0ba3f93d"
   },
   "commands": [
     {

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "qwen",
-  "version": "0.25.1",
+  "version": "0.25.3",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
     "revision": null,
-    "sha256": "5a6cb4f040b2f43d4daff6ad38b12c213763b4514612b191af9b48c123dccd82"
+    "sha256": "d256750c7c1f338c8ab46d950978f06ff5ad6001b7dc0c4dc7279df181046778"
   },
   "commands": [
     {

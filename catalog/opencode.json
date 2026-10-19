@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "opencode",
-  "version": "2.0.27",
+  "version": "2.0.32",
   "source": {
     "kind": "tagged-source",
-    "url": "https://github.com/anomalyco/opencode/tree/v2.0.27/packages/tui/src",
-    "revision": "v2.0.27",
-    "sha256": "7b6452dcf64e13622e036535ea0741884da9e036552c2b633e05df64ff0a6d11"
+    "url": "https://github.com/anomalyco/opencode/tree/v2.0.32/packages/tui/src",
+    "revision": "v2.0.32",
+    "sha256": "e603fc68ea7ee6216a1a009739d6279df8e37942e98c513d3238ee9a863a6d97"
   },
   "commands": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "name": "/copy",
-      "description": "Copy session transcript",
+      "description": "Copy last assistant message",
       "aliases": [],
       "argsHint": null,
       "category": "Session",
@@ -103,6 +103,14 @@
     {
       "name": "/help",
       "description": "Help",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/highlights",
+      "description": "Show release highlights",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
@@ -202,14 +210,6 @@
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
-      "availability": "default"
-    },
-    {
-      "name": "/share",
-      "description": "Share session",
-      "aliases": [],
-      "argsHint": null,
-      "category": "Session",
       "availability": "default"
     },
     {
