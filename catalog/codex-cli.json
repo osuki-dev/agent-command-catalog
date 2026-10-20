@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "codex-cli",
-  "version": "0.162.1",
+  "version": "0.163.0",
   "source": {
     "kind": "tagged-source",
-    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.162.1/codex-rs/tui/src/slash_command.rs",
-    "revision": "rust-v0.162.1",
-    "sha256": "43ab51f82ea1ce9aec67b8e563fc9f8c750c0ea7c2119e009aede8ee2e5e7d79"
+    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.163.0/codex-rs/tui/src/slash_command.rs",
+    "revision": "rust-v0.163.0",
+    "sha256": "fc438de2c106b60bacc19f37fab5da57a528dce81f4ccbd2847e8fb224863c9b"
   },
   "commands": [
     {
@@ -76,6 +76,14 @@
     {
       "name": "/compact",
       "description": "summarize conversation to prevent hitting the context limit",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
+      "name": "/config",
+      "description": "configure Codex preferences",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
