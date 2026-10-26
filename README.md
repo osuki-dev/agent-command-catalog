@@ -36,7 +36,7 @@ bun run typecheck
 
 The update script reads the latest release number from the npm registry, then fetches tagged official GitHub content where available and official command documentation otherwise. It writes only `catalog/<agent>.json` and `catalog/index.json`. No agent login, API key, or running terminal session is required.
 
-The weekly GitHub Actions workflow runs the same checks and opens a review PR when the JSON changes. It never auto-merges. A collector or validation failure fails the workflow without publishing a new catalog.
+The weekly GitHub Actions workflow runs the same checks plus a static build and opens a PR when the JSON changes. It explicitly dispatches read-only validation for the update branch. After validation succeeds, a separate workflow running trusted default-branch code can squash-merge only a `github-actions[bot]` PR from `automation/update-catalog` that modifies existing `catalog/*.json` files and still matches the validated commit. Source, workflow, added, renamed, and deleted files require manual review. The update branch must include the current base, and branch protection requires `Catalog validation`. A collector or validation failure stops the update without merging a new catalog. Run the updater manually to refresh an outdated update branch.
 
 ## Scope
 

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "codex-cli",
-  "version": "0.163.0",
+  "version": "0.164.0",
   "source": {
     "kind": "tagged-source",
-    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.163.0/codex-rs/tui/src/slash_command.rs",
-    "revision": "rust-v0.163.0",
-    "sha256": "fc438de2c106b60bacc19f37fab5da57a528dce81f4ccbd2847e8fb224863c9b"
+    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.164.0/codex-rs/tui/src/slash_command.rs",
+    "revision": "rust-v0.164.0",
+    "sha256": "38f7b149fa54d62bbe6f99fad6bd6faed1c697663e75abe65379c27f4ff6bff2"
   },
   "commands": [
     {
@@ -306,6 +306,14 @@
       "argsHint": null,
       "category": "TUI",
       "availability": "conditional"
+    },
+    {
+      "name": "/presets",
+      "description": "run or save reusable prompts and slash commands",
+      "aliases": [],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
     },
     {
       "name": "/ps",

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "pi",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/slash-commands.md",
     "revision": null,
-    "sha256": "d7e1db36e9186ff146a6c27de31fe169671f52cb6f7b93e1bf8d7fe76209a79c"
+    "sha256": "e4a8422f7fdfaca8e7d5fbcabccb15b56eabbfebc4498f6b9398f7fc1a5d1b88"
   },
   "commands": [
     {
@@ -103,6 +103,14 @@
       "aliases": [],
       "argsHint": null,
       "category": "Models and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/mcp",
+      "description": "Manage MCP servers: sign in, reconnect, enable or disable, and change exposure",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Runtime and project",
       "availability": "unknown"
     },
     {

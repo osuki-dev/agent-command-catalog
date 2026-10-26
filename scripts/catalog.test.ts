@@ -9,6 +9,22 @@ describe("official source collectors", () => {
     ]);
   });
 
+  test("Claude compacts long subcommand choices within the catalog hint limit", () => {
+    const choices = "migrate|upgrade|api-version|managed-agents-onboard|managed-agents-secure|prompt-audit|cost-optimize|build-eval|hillclimb|preserved-thinking-migration";
+    const markdown = `## All commands\n| Command | Purpose |\n| \`/claude-api [${choices.replaceAll("|", "\\|")}]\` | Load Claude API reference material. |\n| \`/compact [instructions]\` | Compact context. |\n## Next\n`;
+    expect(parseClaude(markdown).map(({ name, argsHint }) => ({ name, argsHint }))).toEqual([
+      { name: "/claude-api", argsHint: "[subcommand]" },
+      { name: "/compact", argsHint: "[instructions]" },
+    ]);
+  });
+
+  test("Claude keeps the primary command when a later row describes its subcommands", () => {
+    const markdown = "## All commands\n| Command | Purpose |\n| `/design [brief]` | Draft UI mockups. Requires artifacts. |\n| `/design consent`, `/design revoke` | Grant or withdraw access. |\n## Next\n";
+    expect(parseClaude(markdown)).toEqual([
+      { name: "/design", description: "Draft UI mockups. Requires artifacts.", aliases: [], argsHint: "[brief]", category: "Built-in", availability: "conditional" },
+    ]);
+  });
+
   test("Codex honors canonical names, aliases, and debug exclusions", () => {
     const rust = `pub enum SlashCommand {
     #[strum(to_string = "pwd", serialize = "cwd")]
@@ -102,4 +118,5 @@ test("catalog validation rejects malformed command data", () => {
   expect(() => validateCatalog(base)).not.toThrow();
   expect(() => validateCatalog({ ...base, commands: [...base.commands.slice(0, 4), { ...base.commands[4], name: "/a" }] })).toThrow(/Duplicate command/);
   expect(() => validateCatalog({ ...base, commands: [...base.commands.slice(0, 4), { ...base.commands[4], name: "/bad;rm" }] })).toThrow(/Invalid command/);
+  expect(() => validateCatalog({ ...base, commands: [...base.commands.slice(0, 4), { ...base.commands[4], argsHint: "a".repeat(121) }] })).toThrow(/Invalid arguments/);
 });

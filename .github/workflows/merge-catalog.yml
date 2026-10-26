@@ -1,0 +1,37 @@
+name: Merge catalog update
+
+on:
+  workflow_run:
+    workflows: [Validate catalog]
+    types: [completed]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: merge-catalog
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    if: >-
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'workflow_dispatch' &&
+      github.event.workflow_run.head_branch == 'automation/update-catalog'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+    steps:
+      # Never check out the PR or read its artifacts in this privileged job.
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+          persist-credentials: false
+      - uses: actions/github-script@v8
+        with:
+          script: |
+            const { mergeCatalog } = require('./.github/scripts/merge-catalog.cjs');
+            await mergeCatalog({ github, context, core });

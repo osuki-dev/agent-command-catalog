@@ -8,12 +8,19 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: update-catalog
+  cancel-in-progress: false
+
 jobs:
   update:
+    if: github.ref_name == github.event.repository.default_branch
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     permissions:
       contents: write
       pull-requests: write
+      actions: write
     steps:
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v2
@@ -22,7 +29,9 @@ jobs:
       - run: bun run typecheck
       - run: bun run catalog:update
       - run: bun run catalog:validate
+      - run: bun run build
       - uses: peter-evans/create-pull-request@v7
+        id: pull-request
         with:
           add-paths: catalog
           branch: automation/update-catalog
@@ -32,4 +41,16 @@ jobs:
           body: |
             Automated update from official tagged source or current official documentation.
 
-            Review the JSON diff, especially removed commands and conditional availability, before merging.
+            Only generated catalog JSON is eligible for automatic merge after Catalog validation passes.
+      # GITHUB_TOKEN-created PR events may require approval. Dispatch read-only
+      # validation explicitly so the weekly update does not require a new secret.
+      - name: Validate the update branch
+        if: steps.pull-request.outputs.pull-request-number
+        uses: actions/github-script@v8
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              ...context.repo,
+              workflow_id: 'validate.yml',
+              ref: 'automation/update-catalog',
+            });

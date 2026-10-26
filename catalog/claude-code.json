@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "claude-code",
-  "version": "2.1.303",
+  "version": "2.1.310",
   "source": {
     "kind": "current-official-docs",
     "url": "https://code.claude.com/docs/en/commands.md",
     "revision": null,
-    "sha256": "ea13c6c08893d2f6d32a0172fae66a4bb34c76fee27367ea43334b1662e21dac"
+    "sha256": "88c29422eaa030363a3fcb75ab0a9aeac53e905658c34895e047cdd22c5aaa9f"
   },
   "commands": [
     {
@@ -59,7 +59,7 @@
     },
     {
       "name": "/auto-mode-setup",
-      "description": "Draft autoMode.environment entries from your project and recent sessions, then review the draft and save it to your user settings. Requires a Pro, Max, or Team plan and Claude Code v2.1.228 or later. On native Windows, requires v2.1.233 or later",
+      "description": "Draft autoMode.environment entries from your project and recent sessions, then review the draft and save it to your user settings. On a Pro, Max, or Team plan, requires Claude Code v2.1.228 or later, or v2.1.233 or later on native Windows. On an Enterprise plan or with a Claude Console API key, requ",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -109,7 +109,7 @@
     },
     {
       "name": "/btw",
-      "description": "Ask a side question about the current session without adding to the conversation. If you run /btw without a question, Claude Code shows your most recent side question so you can browse earlier answers; if you haven't asked one yet, Claude Code prints a usage line. Before v2.1.212, /btw required a qu",
+      "description": "Ask a side question about the current session without adding to the conversation. If you run /btw without a question, Claude Code shows your most recent side question so you can browse earlier answers; if you haven't asked one yet, Claude Code prints a usage line",
       "aliases": [],
       "argsHint": "[question]",
       "category": "Built-in",
@@ -143,7 +143,7 @@
       "name": "/claude-api",
       "description": "Skill. Load Claude API and Managed Agents reference material for your project's language. Also activates automatically when your code imports anthropic or @anthropic-ai/sdk. For what each subcommand does and the version it requires, see Work on Claude API projects",
       "aliases": [],
-      "argsHint": "[migrate|upgrade|managed-agents-onboard|prompt-audit|cost-optimize|build-eval|hillclimb|preserved-thinking-migration]",
+      "argsHint": "[subcommand]",
       "category": "Built-in",
       "availability": "conditional"
     },
@@ -255,7 +255,7 @@
     },
     {
       "name": "/design-login",
-      "description": "Authorize design-system access for /design-sync with your claude.ai account",
+      "description": "Authorize design-system access for /design-sync with your claude.ai account. Sign in with /design-login whenever /design-sync or /design consent tells you to. This sign-in is for the standalone Claude Design site at claude.ai/design, which closes by December 14, 2026; see Migrate from standalone Cla",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -712,7 +712,7 @@
     },
     {
       "name": "/schedule",
-      "description": "Create, update, list, or run routines, which execute in the cloud. Claude walks you through the setup conversationally. You can also ask about a routine's recent runs. Alias: /routines",
+      "description": "Create, update, list, or run cloud scheduled tasks, formerly routines. Claude walks you through the setup conversationally. You can also ask about a scheduled task's recent runs. Alias: /routines",
       "aliases": [
         "/routines"
       ],
@@ -828,11 +828,11 @@
     },
     {
       "name": "/subtask",
-      "description": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use /fork. Requires Claude Code v2.1.212 or",
+      "description": "Spawn a forked subagent: a background subagent that inherits the full conversation and works on the task while you keep working. Its result returns to this conversation when it finishes. To copy the conversation into a separate background session instead, use /fork. When agent view is turned off, /s",
       "aliases": [],
       "argsHint": "<task>",
       "category": "Built-in",
-      "availability": "conditional"
+      "availability": "unknown"
     },
     {
       "name": "/tasks",
@@ -844,7 +844,7 @@
     },
     {
       "name": "/team-onboarding",
-      "description": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days and produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Pro, Max, Team, and Ente",
+      "description": "Generate a team onboarding guide from your Claude Code usage history. Claude analyzes your sessions, commands, and MCP server usage from the past 30 days. It produces a markdown guide a teammate can paste as a first message to get set up quickly. For claude.ai subscribers on Team and Enterprise plan",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
