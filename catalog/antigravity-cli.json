@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "antigravity-cli",
-  "version": "1.4.2",
+  "version": "1.4.7",
   "source": {
     "kind": "current-official-docs",
     "url": "https://antigravity.google/docs/cli/reference.md",
     "revision": null,
-    "sha256": "d8e42327e8ac9f0f926a42c380f588d7f5006ac4e4ee58fbaf32ef0e87255edd"
+    "sha256": "af4bbbb3396570d4c7a851b63cecd07cbce648df82155ee980e59abdc7255e85"
   },
   "commands": [
     {
@@ -76,6 +76,17 @@
       "availability": "unknown"
     },
     {
+      "name": "/codesearch",
+      "description": "Open the interactive Code Search panel to search code across the workspace.",
+      "aliases": [
+        "/cs",
+        "/search"
+      ],
+      "argsHint": null,
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
       "name": "/config",
       "description": "Open the interactive Settings Editor overlay.",
       "aliases": [
@@ -136,14 +147,6 @@
       "availability": "unknown"
     },
     {
-      "name": "/fast",
-      "description": "Enable fast mode (bypass reasoning plans) for quick actions.",
-      "aliases": [],
-      "argsHint": null,
-      "category": "Configurations",
-      "availability": "unknown"
-    },
-    {
       "name": "/feedback",
       "description": "Open the feedback submission panel.",
       "aliases": [],
@@ -167,6 +170,14 @@
       "aliases": [],
       "argsHint": null,
       "category": "Reasoning",
+      "availability": "unknown"
+    },
+    {
+      "name": "/grill-me",
+      "description": "Have the agent interview you one question at a time, with a recommended answer for each, before it starts work.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Planning",
       "availability": "unknown"
     },
     {
@@ -242,11 +253,11 @@
       "availability": "unknown"
     },
     {
-      "name": "/planning",
-      "description": "Enable multi-turn plan generation mode for complex engineering tasks.",
+      "name": "/plan",
+      "description": "Explore the codebase, clarify requirements, and draft a reviewable Implementation Plan.",
       "aliases": [],
       "argsHint": null,
-      "category": "Configurations",
+      "category": "Planning",
       "availability": "unknown"
     },
     {

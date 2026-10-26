@@ -67,7 +67,7 @@ function makeCommand(
     name,
     description: normalizeText(description),
     aliases: [...new Set(aliases)].sort(),
-    argsHint,
+    argsHint: argsHint && argsHint.length > 120 && /^\[[a-z0-9-]+(?:\|[a-z0-9-]+)+\]$/.test(argsHint) ? "[subcommand]" : argsHint,
     category,
     availability,
   };
@@ -85,19 +85,19 @@ function aliasesFrom(description: string): string[] {
 export function parseClaude(markdown: string): Command[] {
   const section = markdown.split("## All commands\n")[1]?.split(/\n## /)[0];
   if (!section) throw new Error("Claude commands table not found");
-  const commands: Command[] = [];
+  const commands = new Map<string, Command>();
   for (const line of section.split("\n")) {
     if (!line.startsWith("| `")) continue;
     const [first, second] = markdownCells(line);
     const match = first?.match(/^`(\/[a-z][a-z0-9-]*)([^`]*)`/);
-    if (!match || !second) continue;
+    if (!match || !second || commands.has(match[1]!)) continue;
     const description = normalizeText(second);
     if (/^Removed\b/i.test(description)) continue;
     const aliases = aliasesFrom(description);
     const conditional = /\b(requires?|available (?:only|where)|doesn.t appear|only shows)\b/i.test(description);
-    commands.push(makeCommand(match[1]!, description, "Built-in", aliases, match[2]?.trim().replaceAll("\\|", "|") || null, conditional ? "conditional" : "unknown"));
+    commands.set(match[1]!, makeCommand(match[1]!, description, "Built-in", aliases, match[2]?.trim().replaceAll("\\|", "|") || null, conditional ? "conditional" : "unknown"));
   }
-  return sorted(commands);
+  return sorted([...commands.values()]);
 }
 
 export function parseQoder(markdown: string): Command[] {

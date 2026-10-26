@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "qwen",
-  "version": "0.25.3",
+  "version": "0.26.1",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
     "revision": null,
-    "sha256": "d256750c7c1f338c8ab46d950978f06ff5ad6001b7dc0c4dc7279df181046778"
+    "sha256": "7662d25d27df7f23f7d37e6c1210085ff2bc55f5b0710be88877e613178873d2"
   },
   "commands": [
     {
@@ -47,6 +47,14 @@
       "aliases": [],
       "argsHint": null,
       "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
+      "name": "/autofix-pr",
+      "description": "Watch a PR and fix its CI, review feedback and conflicts",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Built-in Skills",
       "availability": "unknown"
     },
     {
