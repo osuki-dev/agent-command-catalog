@@ -9,5 +9,6 @@
   "kilo": "catalog/kilo.json",
   "qwen": "catalog/qwen.json",
   "cursor": "catalog/cursor.json",
-  "antigravity-cli": "catalog/antigravity-cli.json"
+  "antigravity-cli": "catalog/antigravity-cli.json",
+  "fx": "catalog/fx.json"
 }

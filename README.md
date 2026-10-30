@@ -15,8 +15,9 @@ A small catalog of built-in slash commands for coding agents. Each agent has **o
 | Qwen Code | [`qwen.json`](catalog/qwen.json) | [Commands reference](https://github.com/QwenLM/qwen-code/blob/main/docs/users/features/commands.md) |
 | Cursor CLI | [`cursor.json`](catalog/cursor.json) | [Slash-command reference](https://cursor.com/docs/cli/reference/slash-commands) |
 | Antigravity CLI | [`antigravity-cli.json`](catalog/antigravity-cli.json) | [CLI reference](https://antigravity.google/docs/cli/reference/) |
+| fx | [`fx.json`](catalog/fx.json) | [Slash-command reference](https://fx.sh/docs/using-fx/slash-commands) |
 
-The `version` field is the latest npm release observed when available, or the latest GitHub release for Antigravity CLI; `current` means the source does not expose a suitable release channel. Codex and OpenCode v2 sources are pinned to that release's Git tag; OpenCode v1 is intentionally excluded. Other sources use current official documentation, not versioned command definitions, so their `source.kind` is `current-official-docs`: the JSON must not be interpreted as a guarantee that every command exists in a specific installed version. Platform, account, feature flags, and local configuration can also affect availability.
+The `version` field is the latest npm release observed when available, or the latest GitHub release for Antigravity CLI and fx; `current` means the source does not expose a suitable release channel. Codex and OpenCode v2 sources are pinned to that release's Git tag; OpenCode v1 is intentionally excluded. Other sources use current official documentation, not versioned command definitions, so their `source.kind` is `current-official-docs`: the JSON must not be interpreted as a guarantee that every command exists in a specific installed version. Platform, account, feature flags, and local configuration can also affect availability.
 
 ## Use the data
 

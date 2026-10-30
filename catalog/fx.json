@@ -1,0 +1,311 @@
+{
+  "schemaVersion": 1,
+  "agent": "fx",
+  "version": "0.0.16",
+  "source": {
+    "kind": "current-official-docs",
+    "url": "https://fx.sh/docs/using-fx/slash-commands.md",
+    "revision": null,
+    "sha256": "02edef59dd5cf80d84cec75f15a03f5edc9ec3b21964118a52628ceaa87fd02c"
+  },
+  "commands": [
+    {
+      "name": "/allowlist",
+      "description": "Inspect or change persistent permission rules.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/clear",
+      "description": "Start a fresh conversation and keep background processes running.",
+      "aliases": [
+        "/new"
+      ],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compact",
+      "description": "Summarize older conversation context.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/copy",
+      "description": "Copy the latest assistant response.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/credits",
+      "description": "Show the AI Gateway credit balance. /balance is an alias.",
+      "aliases": [
+        "/balance"
+      ],
+      "argsHint": null,
+      "category": "Inspection and settings",
+      "availability": "conditional"
+    },
+    {
+      "name": "/effort",
+      "description": "Choose the reasoning effort for the current model, or pass a level such as high.",
+      "aliases": [],
+      "argsHint": "[level]",
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fast",
+      "description": "Toggle fast mode when supported.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account, model, and runtime",
+      "availability": "conditional"
+    },
+    {
+      "name": "/feedback",
+      "description": "Open the fx feedback form.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/fork",
+      "description": "Start a new conversation from before a chosen prompt, with that prompt in the composer to edit. See Fork a conversation.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/help",
+      "description": "Show interactive help.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/image",
+      "description": "Attach an image. /img is an alias.",
+      "aliases": [
+        "/img"
+      ],
+      "argsHint": "<path>",
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/images",
+      "description": "List pending images, or remove them with clear.",
+      "aliases": [],
+      "argsHint": "[clear]",
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/login",
+      "description": "Open the provider picker to sign in.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/logout",
+      "description": "Sign out of the active or named provider.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/mcp",
+      "description": "Connect and manage MCP servers.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/model",
+      "description": "Choose a model and reasoning effort, or pass a model ID or search term.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/paste",
+      "description": "Attach a clipboard image when supported.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "conditional"
+    },
+    {
+      "name": "/permissions",
+      "description": "Show the permission mode, rules, and session grants in a panel, or change the mode.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/provider",
+      "description": "Choose a provider and how to connect to it.",
+      "aliases": [
+        "/setup"
+      ],
+      "argsHint": null,
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/quit",
+      "description": "Exit fx. /exit is an alias.",
+      "aliases": [
+        "/exit"
+      ],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/rename",
+      "description": "Rename the current conversation.",
+      "aliases": [],
+      "argsHint": "<title>",
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/reset",
+      "description": "Start a fresh conversation and stop workspace background processes.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/resume",
+      "description": "Open the saved-session picker.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/settings",
+      "description": "Open settings.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Inspection and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/shell",
+      "description": "Reload shell startup configuration and clear remembered command approvals.",
+      "aliases": [],
+      "argsHint": "reload",
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/skills",
+      "description": "Browse and manage skills.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/sound",
+      "description": "Turn sounds and terminal bells on or off; max adds interaction sounds.",
+      "aliases": [],
+      "argsHint": "[on|off|max]",
+      "category": "Inspection and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/stats",
+      "description": "Show token and turn counts for this conversation.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Inspection and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/status",
+      "description": "Show the session ID, model, workspace, and permissions in a panel.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Inspection and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/statusline",
+      "description": "Choose which fields appear in the footer.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Inspection and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/trace",
+      "description": "Create and copy a private diagnostic trace.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/ultrafast",
+      "description": "Enable, disable, or inspect the higher-priced Ultrafast request. With no argument, show status without changing it.",
+      "aliases": [],
+      "argsHint": "[on|off|status]",
+      "category": "Account, model, and runtime",
+      "availability": "unknown"
+    },
+    {
+      "name": "/undo",
+      "description": "Undo the most recent tracked file operation.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "unknown"
+    },
+    {
+      "name": "/usage",
+      "description": "Show your provider's usage and spend: AI Gateway reports, or your Codex or Grok plan usage.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Inspection and settings",
+      "availability": "conditional"
+    },
+    {
+      "name": "/version",
+      "description": "Show the installed version.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Inspection and settings",
+      "availability": "unknown"
+    },
+    {
+      "name": "/workspace",
+      "description": "Manage saved additional directories.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Tools and local data",
+      "availability": "unknown"
+    }
+  ]
+}

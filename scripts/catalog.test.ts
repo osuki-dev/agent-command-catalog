@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { parseAntigravity, parseClaude, parseCodex, parseCommandTable, parseOpenCode, parseQoder, validateCatalog } from "./catalog";
+import { parseAntigravity, parseClaude, parseCodex, parseCommandTable, parseOpenCode, parseQoder, validateCatalog, parseFx } from "./catalog";
 
 describe("official source collectors", () => {
   test("Claude skips removed commands and keeps aliases", () => {
@@ -96,6 +96,46 @@ impl SlashCommand {
     expect(commands.map((command) => command.name)).toEqual(["/goal", "/help", "/model", "/new", "/sessions"]);
     expect(commands.find((command) => command.name === "/sessions")?.aliases).toEqual(["/continue", "/resume"]);
     expect(commands.find((command) => command.name === "/goal")).toMatchObject({ argsHint: "[objective]", availability: "conditional" });
+  });
+
+  test("fx keeps inline and prose aliases, argument hints and section categories", () => {
+    const rows = Array.from({ length: 18 }, (_, index) => `| \`/cmd-${index}\` | Example ${index}. |`).join("\n");
+    const markdown = `# Slash commands
+
+## Sessions and shell
+
+| Command | Description |
+| --- | --- |
+| \`/clear\` / \`/new\` | Start a fresh conversation. |
+| \`/quit\` | Exit fx. \`/exit\` is an alias. |
+| \`/ultrafast [on\\|off\\|status]\` | Toggle it. |
+
+### Saved permission rules
+
+\`\`\`text
+/permissions revoke <rule-id>
+\`\`\`
+
+## Tools and local data
+
+| Command | Description |
+| --- | --- |
+| \`/paste\` | Attach a clipboard image when supported. |
+${rows}
+
+## Interactive MCP commands
+
+\`\`\`text
+/mcp list
+\`\`\`
+`;
+    const commands = parseFx(markdown);
+    expect(commands.find((command) => command.name === "/clear")).toMatchObject({ aliases: ["/new"], category: "Sessions and shell" });
+    expect(commands.find((command) => command.name === "/quit")?.aliases).toEqual(["/exit"]);
+    expect(commands.find((command) => command.name === "/ultrafast")?.argsHint).toBe("[on|off|status]");
+    expect(commands.find((command) => command.name === "/paste")).toMatchObject({ category: "Tools and local data", availability: "conditional" });
+    expect(commands.map((command) => command.name)).not.toContain("/new");
+    expect(commands.map((command) => command.name)).not.toContain("/permissions");
   });
 
   test("Antigravity CLI parses its official reference table", () => {
