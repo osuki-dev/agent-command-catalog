@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 
-export const agents = ["claude-code", "codex-cli", "opencode", "qoder-cli", "pi", "copilot", "droid", "kilo", "qwen", "cursor", "antigravity-cli"] as const;
+export const agents = ["claude-code", "codex-cli", "opencode", "qoder-cli", "pi", "copilot", "droid", "kilo", "qwen", "cursor", "antigravity-cli", "fx"] as const;
 export type Agent = (typeof agents)[number];
 export type Availability = "default" | "conditional" | "unknown";
 export type Command = {
@@ -35,6 +35,11 @@ const packages: Partial<Record<Agent, string>> = {
   droid: "droid",
   kilo: "@kilocode/cli",
   qwen: "@qwen-code/qwen-code",
+};
+/** Agents released on GitHub instead of npm; fx's npm namesake is an unrelated JSON viewer. */
+const githubReleases: Partial<Record<Agent, string>> = {
+  "antigravity-cli": "google-antigravity/antigravity-cli",
+  fx: "vercel-labs/fx",
 };
 const root = join(import.meta.dir, "..");
 const commandName = /^\/[a-z][a-z0-9-]{0,79}$/;
@@ -228,6 +233,33 @@ export function parseAntigravity(markdown: string): Command[] {
   return sorted(commands);
 }
 
+/** fx lists `Command | Description` tables per heading. Aliases appear either
+ * beside the name (`/clear` / `/new`) or in prose ("`/exit` is an alias."). */
+export function parseFx(markdown: string): Command[] {
+  const section = markdown.split("\n## Sessions and shell\n")[1]?.split("\n## Interactive MCP commands\n")[0];
+  if (!section) throw new Error("fx slash-command tables not found");
+  const commands: Command[] = [];
+  let category = "Sessions and shell";
+  for (const line of section.split("\n")) {
+    const heading = line.match(/^## (.+)$/)?.[1];
+    if (heading) category = heading.trim();
+    if (!line.startsWith("|")) continue;
+    const [first, description] = markdownCells(line);
+    const names = [...(first ?? "").matchAll(/`(\/[a-z][a-z0-9-]*)([^`]*)`/g)];
+    const name = names[0];
+    if (!name || !description) continue;
+    const text = normalizeText(description);
+    const aliases = [
+      ...names.slice(1).map((match) => match[1]!),
+      ...[...text.matchAll(/(\/[a-z][a-z0-9-]*) is an alias/g)].map((match) => match[1]!),
+    ];
+    const conditional = /\bwhen supported\b|AI Gateway|Codex or Grok/i.test(text);
+    commands.push(makeCommand(name[1]!, description, category, aliases, name[2]?.trim().replaceAll("\\|", "|") || null, conditional ? "conditional" : "unknown"));
+  }
+  if (commands.length < 20) throw new Error("Too few fx commands");
+  return sorted(commands);
+}
+
 export function validateCatalog(input: unknown): asserts input is Catalog {
   if (!input || typeof input !== "object") throw new Error("Catalog must be an object");
   const value = input as Partial<Catalog>;
@@ -262,12 +294,14 @@ async function fetchText(url: string): Promise<string> {
 }
 
 async function latestVersion(agent: Agent): Promise<string> {
-  if (agent === "antigravity-cli") {
-    const response = await fetch("https://api.github.com/repos/google-antigravity/antigravity-cli/releases/latest", { signal: AbortSignal.timeout(20_000), headers: { "user-agent": "agent-command-catalog/0.1" } });
+  const repository = githubReleases[agent];
+  if (repository) {
+    const response = await fetch(`https://api.github.com/repos/${repository}/releases/latest`, { signal: AbortSignal.timeout(20_000), headers: { "user-agent": "agent-command-catalog/0.1" } });
     if (!response.ok) throw new Error(`GitHub releases ${agent}: HTTP ${response.status}`);
     const metadata: unknown = await response.json();
-    const version = (metadata as { tag_name?: unknown }).tag_name;
-    if (typeof version !== "string" || !versionPattern.test(version)) throw new Error(`GitHub releases ${agent}: invalid version`);
+    const tag = (metadata as { tag_name?: unknown }).tag_name;
+    const version = typeof tag === "string" ? tag.replace(/^v/, "") : "";
+    if (!versionPattern.test(version)) throw new Error(`GitHub releases ${agent}: invalid version`);
     return version;
   }
   const packageName = packages[agent];
@@ -295,6 +329,7 @@ export async function collect(agent: Agent, version: string): Promise<Catalog> {
     qwen: "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
     cursor: "https://cursor.com/docs/cli/reference/slash-commands.md",
     "antigravity-cli": "https://antigravity.google/docs/cli/reference.md",
+    fx: "https://fx.sh/docs/using-fx/slash-commands.md",
   };
   const url = agent === "codex-cli" ? `https://raw.githubusercontent.com/openai/codex/${revision}/codex-rs/tui/src/slash_command.rs`
     : agent === "opencode" ? `https://github.com/anomalyco/opencode/tree/${revision}/packages/tui/src`
@@ -317,6 +352,7 @@ export async function collect(agent: Agent, version: string): Promise<Catalog> {
                 : agent === "kilo" ? parseCommandTable(source, "### Interactive Slash Commands", "### Importing Claude Code")
                   : agent === "qwen" ? parseCommandTable(source, "## 1. Slash Commands", "## 2. @ Commands")
                     : agent === "antigravity-cli" ? parseAntigravity(source)
+                    : agent === "fx" ? parseFx(source)
                     : parseCommandTable(source, "# Slash commands");
   const catalog: Catalog = {
     schemaVersion: 1,

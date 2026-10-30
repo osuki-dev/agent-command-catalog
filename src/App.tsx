@@ -11,6 +11,7 @@ import kilo from "../catalog/kilo.json";
 import qwen from "../catalog/qwen.json";
 import cursor from "../catalog/cursor.json";
 import antigravity from "../catalog/antigravity-cli.json";
+import fx from "../catalog/fx.json";
 import "./index.css";
 
 const catalogs = [
@@ -25,6 +26,7 @@ const catalogs = [
   { id: "qwen", label: "Qwen Code", data: qwen, mark: "W" },
   { id: "cursor", label: "Cursor CLI", data: cursor, mark: "C" },
   { id: "antigravity-cli", label: "Antigravity CLI", data: antigravity, mark: "A" },
+  { id: "fx", label: "fx", data: fx, mark: "F" },
 ] as const;
 
 type AgentId = (typeof catalogs)[number]["id"];
