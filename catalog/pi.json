@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "pi",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/earendil-works/pi/main/packages/coding-agent/docs/slash-commands.md",
     "revision": null,
-    "sha256": "e4a8422f7fdfaca8e7d5fbcabccb15b56eabbfebc4498f6b9398f7fc1a5d1b88"
+    "sha256": "8d44fc21253e7f0cdd468d0484e6a6ed50cc90f3e2b639d9e804a00f1ea93080"
   },
   "commands": [
     {
@@ -75,7 +75,7 @@
     },
     {
       "name": "/import",
-      "description": "Import and resume a JSONL session",
+      "description": "Import a JSONL session, preserving its ID and working directory",
       "aliases": [],
       "argsHint": "<path>",
       "category": "Sessions and context",
@@ -155,7 +155,7 @@
     },
     {
       "name": "/resume",
-      "description": "Switch to another saved session",
+      "description": "Resume another session",
       "aliases": [],
       "argsHint": null,
       "category": "Sessions and context",

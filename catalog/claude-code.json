@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "claude-code",
-  "version": "2.1.310",
+  "version": "2.1.316",
   "source": {
     "kind": "current-official-docs",
     "url": "https://code.claude.com/docs/en/commands.md",
     "revision": null,
-    "sha256": "88c29422eaa030363a3fcb75ab0a9aeac53e905658c34895e047cdd22c5aaa9f"
+    "sha256": "dbeb2b14ca26b6684ea381cd841253b11b299b48eb1eb6a4869a0f8d8ec86831"
   },
   "commands": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "name": "/artifacts",
-      "description": "List the artifacts you own or that are shared with you, then attach one to the session, open it in your browser, or copy its link. Available where artifacts are. Requires Claude Code v2.1.208 or later; attaching with Enter requires v2.1.216",
+      "description": "List the artifacts you own or that are shared with you, then attach one to the session, open it in your browser, or copy its link. Available where artifacts are",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -59,7 +59,7 @@
     },
     {
       "name": "/auto-mode-setup",
-      "description": "Draft autoMode.environment entries from your project and recent sessions, then review the draft and save it to your user settings. On a Pro, Max, or Team plan, requires Claude Code v2.1.228 or later, or v2.1.233 or later on native Windows. On an Enterprise plan or with a Claude Console API key, requ",
+      "description": "Draft autoMode.environment entries from your project and recent sessions, then review the draft and save it to your user settings. On a Pro, Max, Ultra, or Team plan, requires Claude Code v2.1.228 or later, or v2.1.233 or later on native Windows. On an Enterprise plan or with a Claude Console API ke",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -297,7 +297,7 @@
     },
     {
       "name": "/effort",
-      "description": "Set the effort level: low to xhigh, max, or auto; status prints it. ultracode or ultracode on turns ultracode on for the session at the current level, and ultracode off turns it off; the ultracode key persists. max is session-only. The on and off arguments and keeping the current level require Claud",
+      "description": "Set the effort level: low to xhigh, max, or auto; status prints it. ultracode or ultracode on turns ultracode on for the session, and ultracode off turns it off; the ultracode key persists. max is session-only. The on and off arguments require Claude Code v2.1.284 or later. If you run /effort while",
       "aliases": [],
       "argsHint": "[level|auto|status|ultracode [on|off]]",
       "category": "Built-in",
@@ -512,7 +512,7 @@
     },
     {
       "name": "/model",
-      "description": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to adjust effort level. With no argument, opens a picker; press s on a row to switch for the current session only. See when Claude Code asks you to confirm the switch. Once you confirm",
+      "description": "Switch the AI model and save it as your default for new sessions. For models that support it, use left/right arrows to adjust effort level. With no argument, opens a picker; press s on a row to switch for the current session only. See when the new model starts. Before v2.1.242, it could wait. With -",
       "aliases": [],
       "argsHint": "[model]",
       "category": "Built-in",
@@ -576,7 +576,7 @@
     },
     {
       "name": "/privacy-settings",
-      "description": "View and update your privacy settings. Only available for Pro and Max plan subscribers",
+      "description": "View and update your privacy settings. Only available for Pro, Max, and Ultra plan subscribers",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -655,6 +655,16 @@
       "argsHint": "[name]",
       "category": "Built-in",
       "availability": "unknown"
+    },
+    {
+      "name": "/restart",
+      "description": "Restart Claude Code and resume this session, which applies an installed update. Run it when the footer offers it after an update installs. Requires a Pro, Max, or Ultra plan and a native install on macOS or Linux, not WSL. Requires Claude Code v2.1.288 or later. Alias: /update",
+      "aliases": [
+        "/update"
+      ],
+      "argsHint": null,
+      "category": "Built-in",
+      "availability": "conditional"
     },
     {
       "name": "/resume",
@@ -884,7 +894,7 @@
     },
     {
       "name": "/ultrareview",
-      "description": "Run a deep, multi-agent code review in a cloud sandbox with ultrareview. Pass a PR reference to review that pull request, or a base branch or commit to change the comparison base. The preferred invocation is /code-review ultra, and /ultrareview is an alias. Includes 3 free runs on Pro and Max, then",
+      "description": "Run a deep, multi-agent code review in a cloud sandbox with ultrareview. Pass a PR reference to review that pull request, or a base branch or commit to change the comparison base. The preferred invocation is /code-review ultra, and /ultrareview is an alias. Includes 3 free runs on Pro, Max, and Ultr",
       "aliases": [],
       "argsHint": "[PR or branch]",
       "category": "Built-in",
@@ -908,7 +918,7 @@
     },
     {
       "name": "/usage",
-      "description": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Team, or Enterprise plan, includes a breakdown of what counts against your plan limits. /cost and /stats are aliases",
+      "description": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Ultra, Team, or Enterprise plan, includes a breakdown of what counts against your plan limits. /cost and /stats are aliases",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",

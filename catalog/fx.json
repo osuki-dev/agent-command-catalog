@@ -6,7 +6,7 @@
     "kind": "current-official-docs",
     "url": "https://fx.sh/docs/using-fx/slash-commands.md",
     "revision": null,
-    "sha256": "02edef59dd5cf80d84cec75f15a03f5edc9ec3b21964118a52628ceaa87fd02c"
+    "sha256": "8ed106cf71d1700bf6b88d0ab549a6c4ac6ce147475d71565396527d2e26025d"
   },
   "commands": [
     {
@@ -63,11 +63,11 @@
     },
     {
       "name": "/fast",
-      "description": "Toggle fast mode when supported.",
+      "description": "Toggle Fast mode, or turn it on or off. Turning it on needs a model that supports it.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[on|off]",
       "category": "Account, model, and runtime",
-      "availability": "conditional"
+      "availability": "unknown"
     },
     {
       "name": "/feedback",
@@ -161,10 +161,8 @@
     },
     {
       "name": "/provider",
-      "description": "Choose a provider and how to connect to it.",
-      "aliases": [
-        "/setup"
-      ],
+      "description": "Choose a provider and how to connect to it. /setup still opens it, with a warning.",
+      "aliases": [],
       "argsHint": null,
       "category": "Account, model, and runtime",
       "availability": "unknown"

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "antigravity-cli",
-  "version": "1.4.7",
+  "version": "1.4.12",
   "source": {
     "kind": "current-official-docs",
     "url": "https://antigravity.google/docs/cli/reference.md",
     "revision": null,
-    "sha256": "af4bbbb3396570d4c7a851b63cecd07cbce648df82155ee980e59abdc7255e85"
+    "sha256": "67ca7eba31f0f85767ec74bfb9927147fb013f8c18d1a186043f51312dc873d1"
   },
   "commands": [
     {
@@ -230,7 +230,7 @@
     },
     {
       "name": "/model",
-      "description": "Choose your preferred reasoning model (persists across sessions).",
+      "description": "Choose your preferred reasoning model (persists across sessions). To run a single prompt on another model without changing your default, use /model .",
       "aliases": [],
       "argsHint": null,
       "category": "Configurations",
@@ -317,7 +317,7 @@
     },
     {
       "name": "/skills",
-      "description": "Browse loaded local and global Agent Skills.",
+      "description": "Browse loaded local and global Agent Skills. Run /skills reload to reload skills from disk.",
       "aliases": [],
       "argsHint": null,
       "category": "Tools & Tasks",
@@ -340,11 +340,9 @@
       "availability": "unknown"
     },
     {
-      "name": "/teamwork-preview",
+      "name": "/teamwork",
       "description": "Launch collaborative multi-agent teams for long-horizon projects (paid plans).",
-      "aliases": [
-        "/teamwork"
-      ],
+      "aliases": [],
       "argsHint": null,
       "category": "Reasoning",
       "availability": "conditional"
