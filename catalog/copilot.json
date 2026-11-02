@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "copilot",
-  "version": "1.0.103",
+  "version": "1.0.105",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
     "revision": null,
-    "sha256": "52dfb285981b394fc6b7b636ad84403b5cce878a3c34df51d094e2cb4ebe94bc"
+    "sha256": "fe877295f4552383b6f34e56d6ffe379ce05b79ce59b11f0bd4f86e3006f17b9"
   },
   "commands": [
     {
@@ -47,7 +47,7 @@
       "aliases": [
         "/permissions"
       ],
-      "argsHint": "[off|auto|show]",
+      "argsHint": "[on|off|show]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     },
@@ -461,7 +461,7 @@
     },
     {
       "name": "/permissions",
-      "description": "Switch between permission modes (default, assisted, allow-all), or show the current mode (show). This is the canonical command for permission mode changes; /allow-all and /yolo remain supported as aliases.",
+      "description": "Switch between permission modes (default, assisted, allow-all), or show the current mode (show). This is the canonical command for permission mode changes; /allow-all and /yolo remain supported as aliases. For information about assisted permissions, see Allowing safe commands to run without manual a",
       "aliases": [],
       "argsHint": "[default|assisted|allow-all|show]",
       "category": "Slash commands in the interactive interface",
@@ -551,7 +551,7 @@
     },
     {
       "name": "/reset-allowed-tools",
-      "description": "Reset the list of allowed tools.",
+      "description": "Reset permissions for the current session. This clears session tool approvals, returns the permission mode to manual (turning off allow-all or assisted permissions if either is on), and clears the approvals saved for the current location. Explicit startup rules, such as --allow-tool, --deny-tool, --",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
@@ -793,7 +793,7 @@
       "name": "/yolo",
       "description": "Enable all permissions (tools, paths, and URLs). This is an alias for /permissions allow-all; see the /permissions row for the canonical command and its subcommands.",
       "aliases": [],
-      "argsHint": "[off|auto|show]",
+      "argsHint": "[on|off|show]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     }
