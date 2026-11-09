@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "qoder-cli",
-  "version": "1.1.78",
+  "version": "1.1.85",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.qoder.com/cli/slash-reference.md",
     "revision": null,
-    "sha256": "b0463094d9d0a256fa28374b5a3ca295558f8453e9f14fc4f4db7804249704a9"
+    "sha256": "10f91280459354b97409ec20565d001c375798c01b4a6347fbc2aba62c6a9c3e"
   },
   "commands": [
     {
@@ -167,14 +167,6 @@
       "aliases": [],
       "argsHint": null,
       "category": "Sessions and Conversations",
-      "availability": "unknown"
-    },
-    {
-      "name": "/fast",
-      "description": "Switch to Fast Mode.",
-      "aliases": [],
-      "argsHint": null,
-      "category": "Models and Reasoning",
       "availability": "unknown"
     },
     {

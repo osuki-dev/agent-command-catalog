@@ -6,9 +6,17 @@
     "kind": "current-official-docs",
     "url": "https://fx.sh/docs/using-fx/slash-commands.md",
     "revision": null,
-    "sha256": "02edef59dd5cf80d84cec75f15a03f5edc9ec3b21964118a52628ceaa87fd02c"
+    "sha256": "ed2816e17e07609b001480285e98bdf9e05fed0e7e1471a0f1ec695bb1d88ff4"
   },
   "commands": [
+    {
+      "name": "/agents",
+      "description": "List the open agents and switch to one.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
     {
       "name": "/allowlist",
       "description": "Inspect or change persistent permission rules.",
@@ -23,6 +31,14 @@
       "aliases": [
         "/new"
       ],
+      "argsHint": null,
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
+      "name": "/close",
+      "description": "Close the instance on screen. Closing the last one exits fx.",
+      "aliases": [],
       "argsHint": null,
       "category": "Sessions and shell",
       "availability": "unknown"
@@ -63,11 +79,11 @@
     },
     {
       "name": "/fast",
-      "description": "Toggle fast mode when supported.",
+      "description": "Toggle Fast mode, or turn it on or off. Turning it on needs a model that supports it.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[on|off]",
       "category": "Account, model, and runtime",
-      "availability": "conditional"
+      "availability": "unknown"
     },
     {
       "name": "/feedback",
@@ -112,6 +128,14 @@
       "availability": "unknown"
     },
     {
+      "name": "/launch",
+      "description": "Start another fx instance, optionally in an agent profile, and show it.",
+      "aliases": [],
+      "argsHint": "[profile]",
+      "category": "Sessions and shell",
+      "availability": "unknown"
+    },
+    {
       "name": "/login",
       "description": "Open the provider picker to sign in.",
       "aliases": [],
@@ -123,15 +147,15 @@
       "name": "/logout",
       "description": "Sign out of the active or named provider.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[vercel|codex|grok]",
       "category": "Account, model, and runtime",
       "availability": "unknown"
     },
     {
       "name": "/mcp",
-      "description": "Connect and manage MCP servers.",
+      "description": "Connect and manage MCP servers. See Interactive MCP commands.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[command]",
       "category": "Tools and local data",
       "availability": "unknown"
     },
@@ -139,7 +163,7 @@
       "name": "/model",
       "description": "Choose a model and reasoning effort, or pass a model ID or search term.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[id-or-query]",
       "category": "Account, model, and runtime",
       "availability": "unknown"
     },
@@ -153,18 +177,16 @@
     },
     {
       "name": "/permissions",
-      "description": "Show the permission mode, rules, and session grants in a panel, or change the mode.",
+      "description": "Show the permission mode, rules, and session grants in a panel, or change the mode. reset switches back to ask and clears the session grants.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[ask|auto|full-access|reset]",
       "category": "Account, model, and runtime",
       "availability": "unknown"
     },
     {
       "name": "/provider",
-      "description": "Choose a provider and how to connect to it.",
-      "aliases": [
-        "/setup"
-      ],
+      "description": "Choose a provider and how to connect to it. /setup still opens it with a warning until fx 0.0.18.",
+      "aliases": [],
       "argsHint": null,
       "category": "Account, model, and runtime",
       "availability": "unknown"
@@ -205,9 +227,9 @@
     },
     {
       "name": "/settings",
-      "description": "Open settings.",
+      "description": "Open settings. With startup-scrollback, turn the startupscrollback setting on or off, or toggle it.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[startup-scrollback [on|off]]",
       "category": "Inspection and settings",
       "availability": "unknown"
     },
@@ -221,15 +243,15 @@
     },
     {
       "name": "/skills",
-      "description": "Browse and manage skills.",
+      "description": "Browse and manage skills with show, install, create, remove, and path. add is an alias of install.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[command]",
       "category": "Tools and local data",
       "availability": "unknown"
     },
     {
       "name": "/sound",
-      "description": "Turn sounds and terminal bells on or off; max adds interaction sounds.",
+      "description": "Turn sounds and terminal bells on or off, or toggle them with no argument. max adds interaction sounds.",
       "aliases": [],
       "argsHint": "[on|off|max]",
       "category": "Inspection and settings",
@@ -237,7 +259,7 @@
     },
     {
       "name": "/stats",
-      "description": "Show token and turn counts for this conversation.",
+      "description": "Show terminal rendering counters for this fx process: bytes of terminal output, redraws, debounced resizes, footer updates, and stream chunks. For usage and spend, use /usage.",
       "aliases": [],
       "argsHint": null,
       "category": "Inspection and settings",
@@ -253,9 +275,9 @@
     },
     {
       "name": "/statusline",
-      "description": "Choose which fields appear in the footer.",
+      "description": "Choose which fields appear in the footer, or toggle the one you name.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[context|session|workspace]",
       "category": "Inspection and settings",
       "availability": "unknown"
     },
@@ -301,9 +323,9 @@
     },
     {
       "name": "/workspace",
-      "description": "Manage saved additional directories.",
+      "description": "Manage saved additional directories. With no argument, open them in a list.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[list|add <path>|remove <path>|clear]",
       "category": "Tools and local data",
       "availability": "unknown"
     }

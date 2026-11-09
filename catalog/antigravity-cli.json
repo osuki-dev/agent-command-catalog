@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "antigravity-cli",
-  "version": "1.4.7",
+  "version": "1.5.3",
   "source": {
     "kind": "current-official-docs",
     "url": "https://antigravity.google/docs/cli/reference.md",
     "revision": null,
-    "sha256": "af4bbbb3396570d4c7a851b63cecd07cbce648df82155ee980e59abdc7255e85"
+    "sha256": "18fcf0baf33fae6af4f0ef3415caf8762c9b9e2d68adc5ee5cc01be424e35521"
   },
   "commands": [
     {
@@ -230,7 +230,7 @@
     },
     {
       "name": "/model",
-      "description": "Choose your preferred reasoning model (persists across sessions).",
+      "description": "Choose your preferred reasoning model (persists across sessions). To run a single prompt on another model without changing your default, use /model .",
       "aliases": [],
       "argsHint": null,
       "category": "Configurations",
@@ -317,7 +317,7 @@
     },
     {
       "name": "/skills",
-      "description": "Browse loaded local and global Agent Skills.",
+      "description": "Browse loaded local and global Agent Skills. Run /skills reload to reload skills from disk.",
       "aliases": [],
       "argsHint": null,
       "category": "Tools & Tasks",
@@ -340,11 +340,9 @@
       "availability": "unknown"
     },
     {
-      "name": "/teamwork-preview",
+      "name": "/teamwork",
       "description": "Launch collaborative multi-agent teams for long-horizon projects (paid plans).",
-      "aliases": [
-        "/teamwork"
-      ],
+      "aliases": [],
       "argsHint": null,
       "category": "Reasoning",
       "availability": "conditional"
@@ -369,10 +367,8 @@
     },
     {
       "name": "/voice",
-      "description": "Dictate a prompt using your microphone.",
-      "aliases": [
-        "/record"
-      ],
+      "description": "Talk with the agent by voice (/voice live) or dictate a prompt (/voice dictate). /record always dictates.",
+      "aliases": [],
       "argsHint": null,
       "category": "Utilities",
       "availability": "unknown"
