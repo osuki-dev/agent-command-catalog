@@ -221,12 +221,15 @@ export function parseAntigravity(markdown: string): Command[] {
   for (const line of section.split("\n")) {
     if (!line.startsWith("|")) continue;
     const [first, category, aliasCell, purpose] = markdownCells(line);
-    const name = first?.match(/`(\/[a-z][a-z0-9-]*)\b/)?.[1];
-    if (!name || !category || !purpose) continue;
+    // The palette contains top-level commands. A literal subcommand such as
+    // "/swarm board" has its own documentation row, but is not an argument hint.
+    const syntax = first?.replace(/\[(`[^`]+`)\]\([^)]+\)/g, "$1")
+      .replace(/[`*]/g, "").replace(/\\([\[\]|])/g, "$1");
+    const match = syntax?.match(/^(\/[a-z][a-z0-9-]*)(?:\s+([<\[].+))?$/);
+    if (!match || !category || !purpose) continue;
+    const name = match[1]!;
+    const argsHint = match[2] ?? null;
     const aliases = [...(aliasCell ?? "").matchAll(/\/[a-z][a-z0-9-]*/g)].map((match) => match[0]);
-    const argsHint = first?.match(/`\/[a-z][a-z0-9-]*\s+([^`]+)`/)?.[1]
-      ?? first?.match(/`\/[a-z][a-z0-9-]*`\s+(`[^`]+`|\\\[[^\]]+\\\])/)?.[1]
-      ?? null;
     commands.push(makeCommand(name, purpose, category, aliases, argsHint, /paid plans/i.test(purpose) ? "conditional" : "unknown"));
   }
   if (commands.length < 20) throw new Error("Too few Antigravity CLI commands");
