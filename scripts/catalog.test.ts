@@ -140,10 +140,21 @@ ${rows}
 
   test("Antigravity CLI parses its official reference table", () => {
     const rows = Array.from({ length: 19 }, (_, index) => `| **\`/example-${index}\`** | Utilities | — | Example ${index}. |`).join("\n");
-    const markdown = `## Core slash commands\n| Command | Category | Alias | Execution Purpose |\n${rows}\n| **\`/clear\`** | Utilities | \`/new\` | Reset context. |\n## Default keybindings\n`;
+    const markdown = [
+      "## Core slash commands",
+      "| Command | Category | Alias | Execution Purpose |",
+      rows,
+      "| **`/clear`** | Utilities | `/new` | Reset context. |",
+      "| **[`/swarm board`](/docs/swarm#live-board)** | Reasoning | — | Show the board. |",
+      "| **[`/swarm`](/docs/swarm)** `<task>` | Reasoning | — | Run workers. |",
+      "## Default keybindings",
+    ].join("\n");
     const commands = parseAntigravity(markdown);
     expect(commands.find((command) => command.name === "/clear")).toMatchObject({ aliases: ["/new"], description: "Reset context." });
-    expect(commands).toHaveLength(20);
+    expect(commands.filter((command) => command.name === "/swarm")).toEqual([
+      expect.objectContaining({ description: "Run workers.", argsHint: "<task>" }),
+    ]);
+    expect(commands).toHaveLength(21);
   });
 });
 

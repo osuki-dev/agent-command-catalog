@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "antigravity-cli",
-  "version": "1.4.7",
+  "version": "1.5.12",
   "source": {
     "kind": "current-official-docs",
     "url": "https://antigravity.google/docs/cli/reference.md",
     "revision": null,
-    "sha256": "af4bbbb3396570d4c7a851b63cecd07cbce648df82155ee980e59abdc7255e85"
+    "sha256": "23539621099ed8c7ff67c4c4401fe596a0fc04088bc43a9ecafc3e501bf6bf11"
   },
   "commands": [
     {
@@ -26,6 +26,22 @@
       "availability": "unknown"
     },
     {
+      "name": "/agy-customizations",
+      "description": "Load the customization reference so the agent can create, fix, or explain rules, skills, plugins, hooks, and MCP servers.",
+      "aliases": [],
+      "argsHint": "[request]",
+      "category": "Tools & Tasks",
+      "availability": "unknown"
+    },
+    {
+      "name": "/antigravity-guide",
+      "description": "Ask how to use or configure Antigravity and get an answer from the official documentation.",
+      "aliases": [],
+      "argsHint": "[question]",
+      "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
       "name": "/artifact",
       "description": "Open the Artifact Review panel.",
       "aliases": [],
@@ -37,7 +53,7 @@
       "name": "/boost",
       "description": "Run on-demand multi-agent deep reasoning loops.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "<task>",
       "category": "Reasoning",
       "availability": "unknown"
     },
@@ -45,7 +61,7 @@
       "name": "/browser",
       "description": "Delegate web browsing, UI verification, and in-browser debugging to the browser subagent.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "<task>",
       "category": "Tools & Tasks",
       "availability": "unknown"
     },
@@ -53,7 +69,7 @@
       "name": "/btw",
       "description": "Ask a side question in the background without interrupting the main conversation.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "<query>",
       "category": "Utilities",
       "availability": "unknown"
     },
@@ -82,7 +98,7 @@
         "/cs",
         "/search"
       ],
-      "argsHint": null,
+      "argsHint": "<query>",
       "category": "Utilities",
       "availability": "unknown"
     },
@@ -108,13 +124,13 @@
       "name": "/copy",
       "description": "—",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[n",
       "category": "btw]`**",
       "availability": "unknown"
     },
     {
       "name": "/credits",
-      "description": "View remaining G1 credits and purchase links.",
+      "description": "View remaining AI credits and purchase links.",
       "aliases": [],
       "argsHint": null,
       "category": "Account",
@@ -132,7 +148,7 @@
       "name": "/effort",
       "description": "Set or inspect the active model’s reasoning effort level (low through max, depending on the model).",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[level]",
       "category": "Configurations",
       "availability": "unknown"
     },
@@ -168,7 +184,7 @@
       "name": "/goal",
       "description": "Run autonomously until the goal is verified complete, without intermediate pauses.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "<objective>",
       "category": "Reasoning",
       "availability": "unknown"
     },
@@ -176,7 +192,7 @@
       "name": "/grill-me",
       "description": "Have the agent interview you one question at a time, with a recommended answer for each, before it starts work.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[task]",
       "category": "Planning",
       "availability": "unknown"
     },
@@ -208,7 +224,7 @@
       "name": "/learn",
       "description": "Capture session corrections as persistent rules or skills through a reviewable proposal.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[instruction]",
       "category": "Tools & Tasks",
       "availability": "unknown"
     },
@@ -230,7 +246,7 @@
     },
     {
       "name": "/model",
-      "description": "Choose your preferred reasoning model (persists across sessions).",
+      "description": "Choose your preferred reasoning model (persists across sessions). To run a single prompt on another model without changing your default, use /model .",
       "aliases": [],
       "argsHint": null,
       "category": "Configurations",
@@ -256,7 +272,7 @@
       "name": "/plan",
       "description": "Explore the codebase, clarify requirements, and draft a reviewable Implementation Plan.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[task]",
       "category": "Planning",
       "availability": "unknown"
     },
@@ -274,7 +290,7 @@
       "name": "/remote-control",
       "description": "Toggle Remote Control for the active terminal session.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[on/off]",
       "category": "Utilities",
       "availability": "unknown"
     },
@@ -311,13 +327,13 @@
       "name": "/schedule",
       "description": "Set a one-shot timer or recurring cron schedule that wakes the agent with an instruction.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "<when> <task>",
       "category": "Tools & Tasks",
       "availability": "unknown"
     },
     {
       "name": "/skills",
-      "description": "Browse loaded local and global Agent Skills.",
+      "description": "Browse loaded local and global Agent Skills. Run /skills reload to reload skills from disk.",
       "aliases": [],
       "argsHint": null,
       "category": "Tools & Tasks",
@@ -332,6 +348,14 @@
       "availability": "unknown"
     },
     {
+      "name": "/swarm",
+      "description": "Run a swarm of named workers and a verifier that coordinate on a shared message board.",
+      "aliases": [],
+      "argsHint": "<task>",
+      "category": "Reasoning",
+      "availability": "unknown"
+    },
+    {
       "name": "/tasks",
       "description": "Open the Task Manager panel to monitor background shell execution logs.",
       "aliases": [],
@@ -340,12 +364,10 @@
       "availability": "unknown"
     },
     {
-      "name": "/teamwork-preview",
+      "name": "/teamwork",
       "description": "Launch collaborative multi-agent teams for long-horizon projects (paid plans).",
-      "aliases": [
-        "/teamwork"
-      ],
-      "argsHint": null,
+      "aliases": [],
+      "argsHint": "<task>",
       "category": "Reasoning",
       "availability": "conditional"
     },
@@ -353,7 +375,7 @@
       "name": "/title",
       "description": "Toggle or set terminal window title updates.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[on/off]",
       "category": "Configurations",
       "availability": "unknown"
     },
@@ -369,10 +391,8 @@
     },
     {
       "name": "/voice",
-      "description": "Dictate a prompt using your microphone.",
-      "aliases": [
-        "/record"
-      ],
+      "description": "Talk with the agent by voice (/voice live) or dictate a prompt (/voice dictate). /record always dictates.",
+      "aliases": [],
       "argsHint": null,
       "category": "Utilities",
       "availability": "unknown"

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "qwen",
-  "version": "0.26.1",
+  "version": "0.27.0",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
     "revision": null,
-    "sha256": "7662d25d27df7f23f7d37e6c1210085ff2bc55f5b0710be88877e613178873d2"
+    "sha256": "5ddee19fa713a95f7d85ca9b8c92e461a32a750f7cb8c54eb54f61f90316b6e4"
   },
   "commands": [
     {
@@ -354,6 +354,14 @@
       "availability": "unknown"
     },
     {
+      "name": "/logout",
+      "description": "Sign out of the active Qwen Subscription account (available with Qwen Subscription login)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
+      "availability": "unknown"
+    },
+    {
       "name": "/loop",
       "description": "Run a prompt on a recurring schedule",
       "aliases": [],
@@ -607,6 +615,14 @@
       "aliases": [],
       "argsHint": null,
       "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/upgrade",
+      "description": "Open Qwen subscription plans (available with Qwen Subscription login)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Information, Settings, and Help",
       "availability": "unknown"
     },
     {
