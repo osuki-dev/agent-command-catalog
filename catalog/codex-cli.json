@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "codex-cli",
-  "version": "0.167.0",
+  "version": "0.171.0",
   "source": {
     "kind": "tagged-source",
-    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.167.0/codex-rs/tui/src/slash_command.rs",
-    "revision": "rust-v0.167.0",
-    "sha256": "38f7b149fa54d62bbe6f99fad6bd6faed1c697663e75abe65379c27f4ff6bff2"
+    "url": "https://raw.githubusercontent.com/openai/codex/rust-v0.171.0/codex-rs/tui/src/slash_command.rs",
+    "revision": "rust-v0.171.0",
+    "sha256": "98f0dfa124c8e985c80797eefb65787ff27018063e5eae87e93c31fffddc4529"
   },
   "commands": [
     {
@@ -51,7 +51,7 @@
     },
     {
       "name": "/btw",
-      "description": "start a side conversation in an ephemeral fork",
+      "description": "start a side conversation",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
@@ -163,7 +163,7 @@
     },
     {
       "name": "/feedback",
-      "description": "send logs to maintainers",
+      "description": "send logs to maintainers or save a ZIP",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
@@ -235,7 +235,7 @@
     },
     {
       "name": "/mcp",
-      "description": "list MCP tools; use /mcp verbose or /mcp login",
+      "description": "list MCP tools; /mcp verbose or /mcp login [--environment ]",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",
@@ -350,6 +350,16 @@
       "availability": "default"
     },
     {
+      "name": "/rc",
+      "description": "manage remote control for the local background server",
+      "aliases": [
+        "/remote"
+      ],
+      "argsHint": null,
+      "category": "TUI",
+      "availability": "default"
+    },
+    {
       "name": "/recap",
       "description": "summarize the current conversation now",
       "aliases": [],
@@ -391,7 +401,7 @@
     },
     {
       "name": "/side",
-      "description": "start a side conversation in an ephemeral fork",
+      "description": "Side",
       "aliases": [],
       "argsHint": null,
       "category": "TUI",

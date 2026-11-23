@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "agent": "fx",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "source": {
     "kind": "current-official-docs",
     "url": "https://fx.sh/docs/using-fx/slash-commands.md",

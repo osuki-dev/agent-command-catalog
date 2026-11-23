@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "qwen",
-  "version": "0.27.0",
+  "version": "0.28.4",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/QwenLM/qwen-code/main/docs/users/features/commands.md",
     "revision": null,
-    "sha256": "5ddee19fa713a95f7d85ca9b8c92e461a32a750f7cb8c54eb54f61f90316b6e4"
+    "sha256": "5eafae4484c06685265c8804872aa604dedb90f2fa8bb9523bcf2c155e8cd94d"
   },
   "commands": [
     {
@@ -67,7 +67,7 @@
     },
     {
       "name": "/btw",
-      "description": "Ask a quick side question",
+      "description": "Ask a side question.",
       "aliases": [],
       "argsHint": "<your question>",
       "category": "Side Question (`/btw`)",
@@ -431,6 +431,14 @@
       "aliases": [],
       "argsHint": null,
       "category": "Tool and Model Management",
+      "availability": "unknown"
+    },
+    {
+      "name": "/pr",
+      "description": "Bind a GitHub pull request to this session",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Session and Project Management",
       "availability": "unknown"
     },
     {

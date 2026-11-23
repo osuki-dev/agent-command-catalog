@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
   "agent": "claude-code",
-  "version": "2.1.319",
+  "version": "2.1.330",
   "source": {
     "kind": "current-official-docs",
     "url": "https://code.claude.com/docs/en/commands.md",
     "revision": null,
-    "sha256": "de2453f1ab84d75480ccaff768eb4a4511735d4efd3b0ce079b62d0d1ea182cf"
+    "sha256": "84fa61392cb502686965437149b620c319a7d026a37581ffde4ad4099b2d3a45"
   },
   "commands": [
     {
       "name": "/add-dir",
-      "description": "Add a working directory for file access during the current session. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration isn't discovered from the added directory. You can't add most network paths, such as \\\\server\\share. After a successful",
+      "description": "Add a working directory for file access. Type a partial path to see matching directory suggestions; press Tab to accept one. Most .claude/ configuration isn't discovered from the added directory. You can't add most network paths, such as \\\\server\\share. After a successful add, your DirectoryAdded ho",
       "aliases": [],
       "argsHint": "<path>",
       "category": "Built-in",
@@ -189,7 +189,7 @@
     },
     {
       "name": "/config",
-      "description": "Open the Settings interface to adjust theme, model, output style, and other preferences. Pass one or more key=value pairs to set a setting directly without opening the interface, for example /config thinking=false, /config theme=dark, or /config model=sonnet. The key=value form also works in non-int",
+      "description": "Open the Settings interface to adjust preferences. Pass key=value pairs to set a setting directly, for example /config verbose=true, /config theme=dark, or /config model=sonnet. That form also works in non-interactive mode (-p) and from the Claude mobile app via Remote Control. It can't turn on a se",
       "aliases": [],
       "argsHint": "[key=value ...]",
       "category": "Built-in",
@@ -315,7 +315,7 @@
     },
     {
       "name": "/export",
-      "description": "Export the current conversation as plain text. With a filename, writes directly to that file. Without, opens a dialog to copy to clipboard or save to a file",
+      "description": "Export the current conversation as plain text. With a filename, writes directly to that file, and on v2.1.327 or later refuses one that already exists. Without, opens a dialog to copy to clipboard or save to a file",
       "aliases": [],
       "argsHint": "[filename]",
       "category": "Built-in",
@@ -451,7 +451,7 @@
     },
     {
       "name": "/list-agents",
-      "description": "List the subagents, agent team teammates, and other Claude Code sessions Claude can message, with the name to use for each. See cross-session messaging. Also available as /peers. Requires Claude Code v2.1.224 or later; earlier versions report Unknown command: /list-agents. Teammate rows and the firs",
+      "description": "List the subagents, agent team teammates, and other Claude Code sessions Claude can message, with the name to use for each. See cross-session messaging. Also available as /peers. Teammate rows and the first line showing this session's own name require v2.1.239 or later. Available only in sessions wh",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -536,7 +536,7 @@
     },
     {
       "name": "/permissions",
-      "description": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review recent auto mode denials. You can also view and edit auto mode classifier rules from the dialog's Auto mode tab. Alias: /",
+      "description": "Manage allow, ask, and deny rules for tool permissions. Opens an interactive dialog where you can view rules by scope, add or remove rules, manage working directories, and review recent auto mode denials. You can also view and edit auto mode classifier rules from the dialog's Auto mode tab. In the d",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -806,7 +806,7 @@
     },
     {
       "name": "/status",
-      "description": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A Session kind row reads background job · attached or background job · unattended in a background session, depending on whether a terminal is attached, and interactive in any other session. Before v2.1.",
+      "description": "Open the Settings interface on the Status tab, showing version, model, account, and connectivity. A Session kind row reads background job · attached or background job · unattended in a background session, depending on whether a terminal is attached, and interactive in any other session. Works while",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -822,7 +822,7 @@
     },
     {
       "name": "/stickers",
-      "description": "Order Claude Code stickers",
+      "description": "Check Claude Code sticker availability",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -862,7 +862,7 @@
     },
     {
       "name": "/teleport",
-      "description": "Pull a cloud session into this terminal. Opens a picker, then fetches the branch and conversation. Also available as /tp. Requires a claude.ai subscription",
+      "description": "Pull a cloud session into this terminal. Opens a picker, then loads the conversation. Also available as /tp. Requires a claude.ai subscription",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -870,7 +870,7 @@
     },
     {
       "name": "/terminal-setup",
-      "description": "Install a Shift+Enter keybinding for newlines in VS Code, Cursor, Devin Desktop, Alacritty, or Zed. In Apple Terminal, enable Option+Enter for newlines and turn off the audible bell instead. In iTerm2, turn on clipboard access so that /copy works",
+      "description": "Install a Shift+Enter keybinding for newlines in VS Code, Cursor, Devin Desktop, Alacritty, or Zed. In Apple Terminal, turn off the audible bell instead. In iTerm2, turn on clipboard access so that /copy works",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -886,9 +886,9 @@
     },
     {
       "name": "/tui",
-      "description": "Set the terminal UI renderer and relaunch into it with your conversation intact. fullscreen enables the flicker-free alt-screen renderer. With no argument, prints the active renderer",
+      "description": "Set the terminal UI renderer and relaunch into it. fullscreen enables the flicker-free alt-screen renderer. default, or classic on v2.1.327 or later, selects the classic renderer. With no argument, prints the active renderer",
       "aliases": [],
-      "argsHint": "[default|fullscreen]",
+      "argsHint": "[classic|fullscreen]",
       "category": "Built-in",
       "availability": "unknown"
     },
@@ -910,15 +910,15 @@
     },
     {
       "name": "/upgrade",
-      "description": "Open the upgrade page in your browser to switch to a higher plan tier. When the browser fails to open, the command shows a sign-in prompt without printing the URL",
+      "description": "Open the upgrade page in your browser to switch to a higher plan tier. When no browser can open the page, for example over SSH, the command prints the page's URL above its sign-in prompt. Printing the URL requires Claude Code v2.1.323 or later",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
-      "availability": "unknown"
+      "availability": "conditional"
     },
     {
       "name": "/usage",
-      "description": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Ultra, Team, or Enterprise plan, includes a breakdown of what counts against your plan limits. /cost and /stats are aliases",
+      "description": "Show session cost, plan usage limits, and activity stats. On a Pro, Max, Ultra, Team, or Enterprise plan, includes a breakdown of what counts against your plan limits. Behind a Claude apps gateway that tracks spend, shows your spend through the gateway. /cost and /stats are aliases",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",
@@ -926,7 +926,7 @@
     },
     {
       "name": "/usage-credits",
-      "description": "Configure usage credits, or request them from your admin, when you hit a limit. Opens your usage-credits billing settings in the browser, except that Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI, after confirming in a dialog that",
+      "description": "Configure usage credits, or request them from your admin, when you hit a limit. Opens your usage-credits billing settings in the browser. Team and Enterprise members without billing access instead send a usage-credits request to their admin from the CLI. At a terminal where no browser can open the p",
       "aliases": [],
       "argsHint": null,
       "category": "Built-in",

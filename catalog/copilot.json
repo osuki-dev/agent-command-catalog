@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "copilot",
-  "version": "1.0.107",
+  "version": "1.0.114",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.github.com/en/copilot/reference/copilot-cli-reference/cli-command-reference.md",
     "revision": null,
-    "sha256": "19cb72f4253ce30569f7fcc8932a787dde61f5a2b25e84f448857f69f07eb7d2"
+    "sha256": "6503a7b15f729665b072df3cd343d4b2b76f3ebd757b791dd4edc76e652cdd8c"
   },
   "commands": [
     {
@@ -357,9 +357,9 @@
     },
     {
       "name": "/init",
-      "description": "Initialize Copilot custom instructions and agentic features for this repository. See Project initialization for Copilot.",
+      "description": "Initialize Copilot custom instructions and agentic features for this repository. Text after the command guides what is written. suppress hides the startup reminder for this repository. See Project initialization for Copilot.",
       "aliases": [],
-      "argsHint": null,
+      "argsHint": "[suppress|INSTRUCTIONS]",
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     },
@@ -456,6 +456,14 @@
       "description": "Start a new conversation. /new worktree starts an empty session in a new Git worktree instead of clearing the current one, leaving the current conversation and its working directory unchanged.",
       "aliases": [],
       "argsHint": "[PROMPT]",
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
+      "name": "/on-air",
+      "description": "Toggle streamer mode to hide preview model names, quota details, prompt timestamps, and the update-available notice.",
+      "aliases": [],
+      "argsHint": null,
       "category": "Slash commands in the interactive interface",
       "availability": "unknown"
     },
@@ -670,6 +678,14 @@
       "availability": "unknown"
     },
     {
+      "name": "/streamer-mode",
+      "description": "Toggle streamer mode to hide preview model names, quota details, prompt timestamps, and the update-available notice.",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands in the interactive interface",
+      "availability": "unknown"
+    },
+    {
       "name": "/subagents",
       "description": "Configure default and per-agent subagent models. For an agent with modelPolicy: \"required\"—whether set in the agent's own definition or in the subagents settings override—the picker shows a locked Model entry and a Model enforcement row reading \"required - cannot be overridden\" (or \"required by agen",
       "aliases": [],
@@ -759,7 +775,7 @@
     },
     {
       "name": "/vim",
-      "description": "Toggle Vim mode for the prompt box, enabling Vim-style modal editing: motions (for example, hjkl, w, b, e, 0, $, gg, G), character search (f/F/t/T/;/,), insert commands (i/a/o), edit commands (r/~/J/x/D/C), operators (d/c/y), yank and put (y/p/P), repeat (.), undo and redo (u/Ctrl+R), counts, and Es",
+      "description": "Toggle Vim mode for the prompt box, enabling Vim-style modal editing: motions (for example, hjkl, w, b, e, ge, 0, ^, $, gg, G), character search (f/F/t/T/;/,), insert commands (i/a/o), edit commands (r/~/J/x/D/C), operators (d/c/y), yank and put (y/p/P), repeat (.), undo and redo (u/Ctrl+R), counts,",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands in the interactive interface",
