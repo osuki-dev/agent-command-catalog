@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "qoder-cli",
-  "version": "1.1.85",
+  "version": "1.1.95",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.qoder.com/cli/slash-reference.md",
     "revision": null,
-    "sha256": "10f91280459354b97409ec20565d001c375798c01b4a6347fbc2aba62c6a9c3e"
+    "sha256": "b7a2dec172c7c4bed05a74f4f97ceae9ff7b1dc7324be0ef0860ca5374f1fd60"
   },
   "commands": [
     {
@@ -215,14 +215,6 @@
       "aliases": [],
       "argsHint": null,
       "category": "Account and Status",
-      "availability": "unknown"
-    },
-    {
-      "name": "/kanban",
-      "description": "Open the Kanban panel.",
-      "aliases": [],
-      "argsHint": null,
-      "category": "Work Modes",
       "availability": "unknown"
     },
     {

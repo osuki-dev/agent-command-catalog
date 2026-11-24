@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "opencode",
-  "version": "2.2.6",
+  "version": "2.4.0",
   "source": {
     "kind": "tagged-source",
-    "url": "https://github.com/anomalyco/opencode/tree/v2.2.6/packages/tui/src",
-    "revision": "v2.2.6",
-    "sha256": "2a999fb577056c4437ea372115075ec1d8467ef9a3b3ed4ab3de5b76c1ba2703"
+    "url": "https://github.com/anomalyco/opencode/tree/v2.4.0/packages/tui/src",
+    "revision": "v2.4.0",
+    "sha256": "c905a8b0a8073676d8a618f281019ff86abc086a4df2856a18236c729752d56d"
   },
   "commands": [
     {
@@ -44,7 +44,10 @@
     {
       "name": "/connect",
       "description": "Connect an integration",
-      "aliases": [],
+      "aliases": [
+        "/auth",
+        "/login"
+      ],
       "argsHint": null,
       "category": "TUI",
       "availability": "default"

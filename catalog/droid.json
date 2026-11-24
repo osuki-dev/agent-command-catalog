@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "droid",
-  "version": "1.6.0",
+  "version": "1.17.2",
   "source": {
     "kind": "current-official-docs",
     "url": "https://docs.factory.ai/droid-cli/cli-reference.md",
     "revision": null,
-    "sha256": "b27ca3284b7a84c7d2f71fe0697db81c9d72f71c3928210ff364fc756c5a6262"
+    "sha256": "7c4156f3e890e4ac07f5ef89f070f3867c3ff3b08d44e118e763a1b68224054c"
   },
   "commands": [
     {
@@ -18,8 +18,24 @@
       "availability": "unknown"
     },
     {
+      "name": "/agent-effectiveness-report",
+      "description": "Build an organization-level Agent Effectiveness report from Factory usage, pull requests, and work items; listed for Owners and Managers of organizations where it is enabled (details)",
+      "aliases": [],
+      "argsHint": "[timeframe]",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
       "name": "/archive",
       "description": "Archive the current session (restore it from the /sessions Archived tab)",
+      "aliases": [],
+      "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/automations",
+      "description": "Open this machine's scheduled automations (details)",
       "aliases": [],
       "argsHint": null,
       "category": "Slash commands",
@@ -220,6 +236,14 @@
       "availability": "unknown"
     },
     {
+      "name": "/link-work",
+      "description": "Link this session to a Linear issue; /link-work shows the link and /link-work clear removes it. Listed where work item linking is enabled (details)",
+      "aliases": [],
+      "argsHint": "<url>",
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
       "name": "/login",
       "description": "Sign in to Factory",
       "aliases": [],
@@ -232,6 +256,14 @@
       "description": "Sign out of Factory",
       "aliases": [],
       "argsHint": null,
+      "category": "Slash commands",
+      "availability": "unknown"
+    },
+    {
+      "name": "/loop",
+      "description": "Repeat a prompt on an interval from 1 minute to 24 hours; /loop status lists loops and /loop stop stops one (details)",
+      "aliases": [],
+      "argsHint": "<interval> <prompt>",
       "category": "Slash commands",
       "availability": "unknown"
     },

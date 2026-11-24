@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "antigravity-cli",
-  "version": "1.5.12",
+  "version": "1.5.15",
   "source": {
     "kind": "current-official-docs",
     "url": "https://antigravity.google/docs/cli/reference.md",
     "revision": null,
-    "sha256": "23539621099ed8c7ff67c4c4401fe596a0fc04088bc43a9ecafc3e501bf6bf11"
+    "sha256": "44917daf22a9d864d051f5bb4b9fef474ea8d6d76375ca98c69ddda7898612a5"
   },
   "commands": [
     {
@@ -100,6 +100,14 @@
       ],
       "argsHint": "<query>",
       "category": "Utilities",
+      "availability": "unknown"
+    },
+    {
+      "name": "/compact",
+      "description": "Summarize the conversation so far into a compaction checkpoint to free up context, and optionally continue with .",
+      "aliases": [],
+      "argsHint": "[message]",
+      "category": "Conversations",
       "availability": "unknown"
     },
     {

@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "agent": "kilo",
-  "version": "7.8.27",
+  "version": "7.8.32",
   "source": {
     "kind": "current-official-docs",
     "url": "https://raw.githubusercontent.com/Kilo-Org/kilocode/main/packages/kilo-docs/pages/code-with-ai/platforms/cli.md",
     "revision": null,
-    "sha256": "9aa3d0d867981e85c80418a6334508f9aa795a971952adbada558ff5724ba98d"
+    "sha256": "c9b25b271cc112bd07da5c306b951148fa751af236132f43d02df13e451c6419"
   },
   "commands": [
     {
